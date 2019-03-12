@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="Default environment" name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0 2019-01-14T14:47:06Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="579e061b-9f81-4a2c-83b1-32d4bbab1e51fileName">Countries-API</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer>
+    <con:oAuth2Profile>
+      <con:name>Profile 1</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessToken>TEetetet</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:accessTokenStatus>UNKNOWN</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
+      <con:manualAccessTokenExpirationTime/>
+      <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+    </con:oAuth2Profile>
+  </con:oAuth2ProfileContainer>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <con:parameters/>
+  </con:reporting>
+  <con:authRepository/>
+  <con:tags/>
+  <con:sensitiveInformation/>
+  <con:interface xsi:type="con:RestService" id="e20d5ac8-64c3-4301-b130-9465284590c2" wadlVersion="http://wadl.dev.java.net/2009/02" name="Paises" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings>
+      <con:setting id="e20d5ac8-64c3-4301-b130-9465284590c2fileName">Paises</con:setting>
+    </con:settings>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Paises - Por agrupamento de codigos" path="/rest/v2/alpha" id="4a861b20-61ae-465e-859a-e466febd92b7">
+      <con:settings>
+        <con:setting id="4a861b20-61ae-465e-859a-e466febd92b7fileName">Paises---Por-agrupamento-de-codigos</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>codes</con:name>
+          <con:value>{code};{code};{code}</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>{code};{code};{code}</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="f1fb52bd-83eb-47f3-8a14-e352e5c1ae49" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Grupo de codigos" id="4074cccd-c4cd-4078-a742-92216310e05a" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://restcountries.eu/rest/v2/alpha</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por bloco regional" path="/rest/v2/regionalbloc/{regionalbloc}" id="e21429f5-5d3d-45bb-a701-bb61eae5f90b">
+      <con:settings>
+        <con:setting id="e21429f5-5d3d-45bb-a701-bb61eae5f90bfileName">Paises---Por-bloco-regional</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>regionalbloc</con:name>
+          <con:value>regionalbloc</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>regionalbloc</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="e5379375-d38f-4475-8e5a-c2fe45ece2d9" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Bloco regional" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por capital" path="/rest/v2/capital/{capital}" id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7">
+      <con:settings>
+        <con:setting id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7fileName">Paises---Por-capital</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>capital</con:name>
+          <con:value>capital</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>capital</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="60be3020-989f-4523-a577-3ca5219a0595" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:cap="https://restcountries.eu/rest/v2/capital/capital">cap:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Capital" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por codigo de area" path="/rest/v2/alpha/{code}" id="fdfa8786-d80f-44c2-9b6e-3b58528592e9">
+      <con:settings>
+        <con:setting id="fdfa8786-d80f-44c2-9b6e-3b58528592e9fileName">Paises---Por-codigo-de-area</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>code</con:name>
+          <con:value>code</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>code</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="802b2dde-fc63-486a-9365-dbf08108f3da" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Response</con:element>
+        </con:representation>
+        <con:request name="Codigo" id="8ab45561-217e-431a-b0a1-6a88acbd3453" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por codigo de telefone" path="/rest/v2/callingcode/{callingcode}" id="ee01a1d4-fd97-4436-b7a4-7d700f34dd0d">
+      <con:settings>
+        <con:setting id="ee01a1d4-fd97-4436-b7a4-7d700f34dd0dfileName">Paises---Por-codigo-de-telefone</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>callingcode</con:name>
+          <con:value>callingcode</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>callingcode</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="feb3897f-04e1-45a4-beb2-63ed3778efbd" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:cal="https://restcountries.eu/rest/v2/callingcode/callingcode">cal:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Codigo Telefone" id="a7bac61b-10a7-4e1e-a05b-642b8fc7172e" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por lingua nativa" path="/rest/v2/lang/{et}" id="0931a77f-58e1-42b0-b8a4-1d1f1f20c7f1">
+      <con:settings>
+        <con:setting id="0931a77f-58e1-42b0-b8a4-1d1f1f20c7f1fileName">Paises---Por-lingua-nativa</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>et</con:name>
+          <con:value>et</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>et</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="b9b8932b-e399-4122-8538-73989e24f614" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:et="https://restcountries.eu/rest/v2/lang/et">et:Fault</con:element>
+        </con:representation>
+        <con:request name="Lingua nativa" id="3769e144-22f3-4a0d-aba3-a9daa9240a04" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por moeda" path="/rest/v2/currency/{currency}" id="7ce7c0f8-94d4-4394-8281-3eec69a87938">
+      <con:settings>
+        <con:setting id="7ce7c0f8-94d4-4394-8281-3eec69a87938fileName">Paises---Por-moeda</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>currency</con:name>
+          <con:value>currency</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>currency</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="0e0f88b2-9460-4966-911d-7bb029b2e24a" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element xmlns:cur="https://restcountries.eu/rest/v2/currency/currency">cur:Fault</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html;charset=utf-8</con:mediaType>
+          <con:status>400</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:request name="Moeda" id="c3ae05d1-c524-482b-a64d-660d07d4f289" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://restcountries.eu/rest/v2/currency/currency</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por nome" path="/rest/v2/name/{name}" id="962ae0c6-efb4-466d-9f2b-80701d3a1903">
+      <con:settings>
+        <con:setting id="962ae0c6-efb4-466d-9f2b-80701d3a1903fileName">Paises---Por-nome</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>name</con:name>
+          <con:value>name</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>name</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="b8741330-fe2c-4dd8-9e09-173d6e145da9" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:not="https://restcountries.eu/rest/v2/name/not%20exists">not:Fault</con:element>
+        </con:representation>
+        <con:request name="BUSCAR país por nome parcial dinâmico" id="9007f57d-c6af-4235-9fa7-5d981ac29686" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+        <con:request name="Nome" id="c5df26f1-b6b8-406c-a937-7649c05f89cf" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Por regiao" path="/rest/v2/region/{region}" id="39912378-bb74-4a98-96d7-6250271f62d1">
+      <con:settings>
+        <con:setting id="39912378-bb74-4a98-96d7-6250271f62d1fileName">Paises---Por-regiao</con:setting>
+      </con:settings>
+      <con:parameters>
+        <con:parameter>
+          <con:name>region</con:name>
+          <con:value>region</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>region</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="69ec3453-745b-443e-962f-183b8a7dcdfa" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Regiao" id="a905ba87-090e-4179-8657-a51d9bbcd03b" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Paises - Retorna todos" path="/rest/v2/all" id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaf">
+      <con:settings>
+        <con:setting id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaffileName">Paises---Retorna-todos</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="All 1" id="1350b5aa-7e84-43f6-bd51-4243214bc717" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Buscar todos os paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="d563f488-eb6d-4610-a625-134b0ef7aaf3" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.github.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings>
+      <con:setting id="d563f488-eb6d-4610-a625-134b0ef7aaf3fileName">https%3A%2F%2Fapi.github.com</con:setting>
+    </con:settings>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://api.github.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Github - Buscar Repositorio" path="/search/repositories" id="fed74c12-5f7d-46b6-8ada-6d508a835035">
+      <con:settings>
+        <con:setting id="fed74c12-5f7d-46b6-8ada-6d508a835035fileName">Github---Buscar-Repositorio</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="Pesquisar repositorios" id="4bd2b780-6b33-4b3e-8efa-246cb737134a" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>q</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:rep="https://api.github.com/search/repositories">rep:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>422</con:status>
+          <con:params/>
+          <con:element xmlns:rep="https://api.github.com/search/repositories">rep:Fault</con:element>
+        </con:representation>
+        <con:request name="Pesquisar repositorios" id="39d805db-3419-41d1-a35e-16440e4f5b6c" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://api.github.com/search/repositories</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder>
+            <con:entry>q</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+      <con:method name="Buscar repositorios ordenando" id="e21a5919-59f2-42ec-8e69-d60156b2a19b" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter>
+            <con:name>q</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+          <con:parameter>
+            <con:name>sort</con:name>
+            <con:value>stars</con:value>
+            <con:style>QUERY</con:style>
+            <con:default>stars</con:default>
+            <con:path xsi:nil="true"/>
+            <con:description xsi:nil="true"/>
+          </con:parameter>
+        </con:parameters>
+        <con:request name="Buscar repositorios ordenando" id="2f7a1535-e832-432d-b1b7-bbb6068e295c" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Github - Buscar commits" path="/search/commits" id="759bf604-f304-431a-a698-d8e9ead3ed19">
+      <con:settings>
+        <con:setting id="759bf604-f304-431a-a698-d8e9ead3ed19fileName">Github---Buscar-commits</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="Buscar commit" id="35672476-dbc1-4ea7-bdfb-3e838b0c6dc0" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>q</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>422</con:status>
+          <con:params/>
+          <con:element xmlns:com="https://api.github.com/search/commits">com:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="7dfc7a7b-d824-4c9b-9c6f-24554ba512df" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://api.github.com/search/commits</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder>
+            <con:entry>q</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Github - Buscar usuarios" path="/search/users" id="78c35497-f17f-4c0e-8295-af996039c0af">
+      <con:settings>
+        <con:setting id="78c35497-f17f-4c0e-8295-af996039c0affileName">Github---Buscar-usuarios</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="Method 1" id="a158046d-0170-4713-bf27-ec1ed883893d" method="GET">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>q</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:request name="Usuario" id="214a2fdc-4a90-4d2b-a8ae-2ba71d73f775" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder>
+            <con:entry>q</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Github - Criar Issue" path="/repos/RalaNoPezinho/testa-ai-doido/issues" id="cc80f45d-55e7-483d-b121-401db298c66a">
+      <con:settings>
+        <con:setting id="cc80f45d-55e7-483d-b121-401db298c66afileName">issues</con:setting>
+      </con:settings>
+      <con:parameters/>
+      <con:method name="Method 1" id="d9028305-8731-4586-9335-10c20d29db87" method="POST">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element xmlns:iss="https://api.github.com/repos/:owner/:repo/issues">iss:Fault</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://api.github.com</con:endpoint>
+          <con:request>{
+  "title": "Found a bug",
+  "body": "I'm having a problem with this.",
+}</con:request>
+          <con:originalUri>https://api.github.com/repos/:owner/:repo/issues</con:originalUri>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+          <con:parameterOrder/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="c05c2025-e4db-4e18-8c44-7ed114053763" name="Paises - Pesquisar">
+    <con:settings>
+      <con:setting id="c05c2025-e4db-4e18-8c44-7ed114053763fileName">Paises---Pesquisar</con:setting>
+    </con:settings>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>PARALLELL</con:runType>
+    <con:properties/>
+    <con:reportParameters/>
+    <con:testCase id="53f83e87-dd55-4b50-a0f7-5fbf39710730" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises por nome dinamico DataDriven" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="53f83e87-dd55-4b50-a0f7-5fbf39710730fileName">Paises---Retorna-paises-por-nome-dinamico-DataDriven</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datasource" name="DataSource" id="6f063a7a-35c2-472a-b1aa-7cec9c69e45a">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="File">
+            <con:configuration>
+              <fileName>C:/Repositorio de Projetos/soap-ui/DataDriven Countries.csv</fileName>
+              <separator>,</separator>
+              <trim>true</trim>
+              <charset>Cp1252</charset>
+              <quotedValues>false</quotedValues>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>name</con:property>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:restartOnRun>true</con:restartOnRun>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Method 1 - BUSCAR país por nome parcial dinâmico" id="1aad9152-6a4d-49b0-bc56-89e248a93b5f">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/name/{name}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - BUSCAR país por nome parcial dinâmico" id="9007f57d-c6af-4235-9fa7-5d981ac29686" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/name/Spain</con:originalUri>
+            <con:assertion type="MessageContentAssertion" id="95cfe020-ec47-4702-a02e-0b382e41a1be" name="Message Content Assertion">
+              <con:configuration xsi:type="con:MessageContentAssertion">
+                <con:elements>
+                  <con:xpath>//Response[1]/e[1]/name[1]</con:xpath>
+                  <con:element>name</con:element>
+                  <con:type xsi:nil="true"/>
+                  <con:operator>=</con:operator>
+                  <con:enabled>true</con:enabled>
+                  <con:expectedValue>${DataSource#name}</con:expectedValue>
+                  <con:hasValue>false</con:hasValue>
+                  <con:numberType>false</con:numberType>
+                </con:elements>
+                <con:originalMessage><![CDATA[<Response>
+   <e>
+      <name>Spain</name>
+      <topLevelDomain>
+         <e>.es</e>
+      </topLevelDomain>
+      <alpha2Code>ES</alpha2Code>
+      <alpha3Code>ESP</alpha3Code>
+      <callingCodes>
+         <e>34</e>
+      </callingCodes>
+      <capital>Madrid</capital>
+      <altSpellings>
+         <e>ES</e>
+         <e>Kingdom of Spain</e>
+         <e>Reino de España</e>
+      </altSpellings>
+      <region>Europe</region>
+      <subregion>Southern Europe</subregion>
+      <population>46438422</population>
+      <latlng>
+         <e>40.0</e>
+         <e>-4.0</e>
+      </latlng>
+      <demonym>Spanish</demonym>
+      <area>505992.0</area>
+      <gini>34.7</gini>
+      <timezones>
+         <e>UTC</e>
+         <e>UTC+01:00</e>
+      </timezones>
+      <borders>
+         <e>AND</e>
+         <e>FRA</e>
+         <e>GIB</e>
+         <e>PRT</e>
+         <e>MAR</e>
+      </borders>
+      <nativeName>España</nativeName>
+      <numericCode>724</numericCode>
+      <currencies>
+         <e>
+            <code>EUR</code>
+            <name>Euro</name>
+            <symbol>€</symbol>
+         </e>
+      </currencies>
+      <languages>
+         <e>
+            <iso639_1>es</iso639_1>
+            <iso639_2>spa</iso639_2>
+            <name>Spanish</name>
+            <nativeName>Español</nativeName>
+         </e>
+      </languages>
+      <translations>
+         <de>Spanien</de>
+         <es>España</es>
+         <fr>Espagne</fr>
+         <ja>スペイン</ja>
+         <it>Spagna</it>
+         <br>Espanha</br>
+         <pt>Espanha</pt>
+         <nl>Spanje</nl>
+         <hr>Španjolska</hr>
+         <fa>اسپانیا</fa>
+      </translations>
+      <flag>https://restcountries.eu/data/esp.svg</flag>
+      <regionalBlocs>
+         <e>
+            <acronym>EU</acronym>
+            <name>European Union</name>
+            <otherAcronyms/>
+            <otherNames/>
+         </e>
+      </regionalBlocs>
+      <cioc>ESP</cioc>
+   </e>
+</Response>]]></con:originalMessage>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="name" value="${DataSource#name}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="85826620-fbd0-46f9-abea-1948d69d38b3">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Method 1 - BUSCAR país por nome parcial dinâmico</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="6bf8d771-5313-4432-9fb1-77effbe8e3b6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna todos os paises" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="6bf8d771-5313-4432-9fb1-77effbe8e3b6fileName">Paises---Retorna-todos-os-paises</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca paises" id="0d429c6b-dd91-448d-bb88-22df9520e60c">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/all" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="cbace7e6-d040-4f69-aea4-b6829e36d655" name="Script Assertion">
+              <con:configuration>
+                <scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def ParsedMessage = new JsonSlurper().parseText(ResponseMessage)
+assert !(ParsedMessage.isEmpty())
+assert ParsedMessage.name != null
+assert ParsedMessage.size() > 60</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="fe3047dc-c6be-4ed5-a2f1-8aeab1928767" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com moeda real" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="fe3047dc-c6be-4ed5-a2f1-8aeab1928767fileName">Paises---Retorna-pais-com-moeda-real</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca moeda real" id="00ecc11c-0692-4381-a7cb-9136e881e690">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/currency/{currency}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca moeda real" id="c3ae05d1-c524-482b-a64d-660d07d4f289" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/currency/BRL</con:originalUri>
+            <con:assertion type="JsonPath Match" id="fde1d777-454a-4d53-bcfc-1ed0b8f31d9e" name="JsonPath Match">
+              <con:configuration>
+                <path>$[?(@.name=='Brazil')].currencies[0].code</path>
+                <content>[BRL]</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="currency" value="BRL" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="b32a2f10-8b73-4c7a-9bf8-b91ef998c510" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises com moeda euro" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="b32a2f10-8b73-4c7a-9bf8-b91ef998c510fileName">Paises---Retorna-paises-com-moeda-euro</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca moeda euro" id="db6a3111-44cc-4406-a190-bf565d6b8a34">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/currency/{currency}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca moeda euro" id="c3ae05d1-c524-482b-a64d-660d07d4f289" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/currency/EUR</con:originalUri>
+            <con:assertion type="JsonPath Match" id="7160e2be-b1c9-4ea6-b1a8-192ad4ac28cf" name="JsonPath Match">
+              <con:configuration>
+                <path>$[?(@.currencies[0].code!='EUR')]</path>
+                <content>false</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="currency" value="EUR" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="154d7cdf-937a-43f0-9a88-bf230abe8990" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna moeda invalida" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="154d7cdf-937a-43f0-9a88-bf230abe8990fileName">Paises---Retorna-moeda-invalida</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Retorna moeda invalida" id="aaedcb12-4849-42a5-a314-f8493c950125">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/currency/{currency}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Retorna moeda invalida" id="c3ae05d1-c524-482b-a64d-660d07d4f289" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/currency/not%20exists</con:originalUri>
+            <con:assertion type="JsonPath Match" id="b1e01637-e3e7-44e6-befb-acbc95d31123" name="JsonPath Match">
+              <con:configuration>
+                <path>$.message</path>
+                <content>Bad Request</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="currency" value="not exists" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="946bd80f-113e-48d4-9c0e-75af2216ef02" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com lingua nativa espanhol" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="946bd80f-113e-48d4-9c0e-75af2216ef02fileName">Paises---Retorna-pais-com-lingua-nativa-espanhol</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca lingua nativa espanhol" id="d72e792a-f246-4f60-bf95-d5c1fd040d65">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/lang/{et}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca lingua nativa espanhol" id="3769e144-22f3-4a0d-aba3-a9daa9240a04" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/lang/es</con:originalUri>
+            <con:assertion type="JsonPath Existence Match" id="47f8bc09-7c93-44ee-9cda-7219c0ecffe2" name="JsonPath Existence Match">
+              <con:configuration>
+                <path>$[?(@.languages[0].iso639_1=='es')]</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="et" value="es" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="5faa30f1-a299-41f1-b94e-2d4d982f0e3f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com lingua nativa invalida" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="5faa30f1-a299-41f1-b94e-2d4d982f0e3ffileName">Paises---Retorna-pais-com-lingua-nativa-invalida</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Lingua nativa invalida" id="33485325-cf40-484a-bdde-5d0338c0ccf0">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/lang/{et}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Lingua nativa invalida" id="3769e144-22f3-4a0d-aba3-a9daa9240a04" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/lang/not%20exists</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="et" value="not exists" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="25e5415e-b590-4c81-a499-9bfa8cb9db8f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com nome parcial United St" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="25e5415e-b590-4c81-a499-9bfa8cb9db8ffileName">Paises---Retorna-pais-com-nome-parcial-United-St</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Nome parcial United St" id="bc83f41e-8aa4-4de2-a48e-431a20ec2ba2">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/name/{name}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Nome parcial United St" id="c5df26f1-b6b8-406c-a937-7649c05f89cf" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/name/United%20St</con:originalUri>
+            <con:assertion type="JsonPath Existence Match" id="fa174a10-879a-491d-9d55-06ec6e083f0b" name="JsonPath Existence Match">
+              <con:configuration>
+                <path>$[?(@.name=='United States Minor Outlying Islands')]</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="name" value="United St" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="da8b1382-6711-4f1c-8d91-d271758e6fae" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com nome inexistente" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="da8b1382-6711-4f1c-8d91-d271758e6faefileName">Paises---Retorna-pais-com-nome-inexistente</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Nome inexistente" id="f3393156-2f6f-4da3-9d0f-ee625cbe6528">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/name/{name}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Nome inexistente" id="c5df26f1-b6b8-406c-a937-7649c05f89cf" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/name/not%20exists</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="name" value="not exists" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="6e5f0751-eae4-41fd-b7b0-792932d959e7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais com codigo CO" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="6e5f0751-eae4-41fd-b7b0-792932d959e7fileName">Paises---Retorna-pais-com-codigo-CO</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Codigo CO" id="9e4b67dd-e009-40e5-98ae-5a0f372023f5">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/alpha/{code}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Codigo CO" id="8ab45561-217e-431a-b0a1-6a88acbd3453" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/alpha/co</con:originalUri>
+            <con:assertion type="JsonPath Match" id="1ee1a9bc-a647-4991-b9d8-20fc90c01e34" name="JsonPath Match">
+              <con:configuration>
+                <path>$.alpha2Code</path>
+                <content>CO</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="code" value="co" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="13547b4c-ccfd-4e7a-b326-a6485d5a33f1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises por grupo de codigo" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="13547b4c-ccfd-4e7a-b326-a6485d5a33f1fileName">Paises---Retorna-paises-por-grupo-de-codigo</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca grupo col;no;ee" id="a4a3c21c-5e36-4b3d-9d7b-8bee24b169b1">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/alpha" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca grupo col;no;ee" id="4074cccd-c4cd-4078-a742-92216310e05a" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/alpha</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="codes" value="col;no;ee" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="203d8ca8-8236-4ee9-9912-b302ae249e16" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna pais codigo telefone 55" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="203d8ca8-8236-4ee9-9912-b302ae249e16fileName">Paises---Retorna-pais-codigo-telefone-55</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Codigo 55" id="8daea3ef-8a1a-43ad-b232-91b5b3434a57">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/callingcode/{callingcode}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Codigo 55" id="a7bac61b-10a7-4e1e-a05b-642b8fc7172e" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/callingcode/55</con:originalUri>
+            <con:assertion type="JsonPath Match" id="5994b84a-ed65-4f49-904d-56734a6ac41f" name="JsonPath Match">
+              <con:configuration>
+                <path>$[?(@.callingCodes=='55')].name</path>
+                <content>Brazil</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="callingcode" value="55" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="b6092cd0-f9b8-44ff-b9ef-e4fb4300a694" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da Europa" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="b6092cd0-f9b8-44ff-b9ef-e4fb4300a694fileName">Paises---Retorna-paises-da-Europa</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Paises europa" id="6aa6aa18-6868-4c8a-ad5e-00facab7e6ae">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/region/{region}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Paises europa" id="a905ba87-090e-4179-8657-a51d9bbcd03b" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/region/Europe</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="7cab8c15-80ba-4ef1-a1d8-618b806e820f" name="Script Assertion">
+              <con:configuration>
+                <scriptText>assert context.response, 'Response is null or empty'
+def json = new groovy.json.JsonSlurper().parseText(context.response)
+
+def result = json.collect{it.'region'} as Set
+
+assert 1 == result.size()
+
+assert result == ['Europe'] as Set</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="region" value="Europe" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="82c39c4f-a7da-4227-b29d-d845805593ca" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises das Americas" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="82c39c4f-a7da-4227-b29d-d845805593cafileName">Paises---Retorna-paises-das-Americas</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Busca paises america" id="7d056aa9-9f37-4b9a-823e-0e16d7ab4245">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/region/{region}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Busca paises america" id="a905ba87-090e-4179-8657-a51d9bbcd03b" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/region/Americas</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="a3a6d66d-b365-4957-af2d-2c56ff47d9cf" name="Script Assertion">
+              <con:configuration>
+                <scriptText>assert context.response, 'Response is null or empty'
+def json = new groovy.json.JsonSlurper().parseText(context.response)
+
+def result = json.collect{it.'region'} as Set
+
+assert 1 == result.size()
+
+assert result == ['Americas'] as Set</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="region" value="Americas" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="3c72452d-0940-4368-9bef-282bc7c70262" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da SAARC" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="3c72452d-0940-4368-9bef-282bc7c70262fileName">Paises---Retorna-paises-da-SAARC</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Paises da regiao SAARC" id="3eeae7d5-02aa-4f76-a11e-84b996144ea6">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Paises da regiao SAARC" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/SAARC</con:originalUri>
+            <con:assertion type="GroovyScriptAssertion" id="1d10e0fc-43c6-4874-aa6f-18c0f90aa81a" name="Script Assertion">
+              <con:configuration>
+                <scriptText>assert context.response, 'Response is null or empty'
+def json = new groovy.json.JsonSlurper().parseText(context.response)
+def result = json.collect{it.'regionalBlocs.acronym'} as Set
+
+//def result2 = json.collect{it.'acronym'} as Set
+
+//assert 1 == result.size()
+assert result == ['SAARC'] as Set</scriptText>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="regionalbloc" value="SAARC" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="4f6ca726-f778-4c1c-98de-2d893e766c0d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Paises - Retorna capital Chile" searchProperties="true">
+      <con:settings>
+        <con:setting id="4f6ca726-f778-4c1c-98de-2d893e766c0dfileName">Paises---Retorna-capital-Chile</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Capital Chile" id="9598f8af-b892-452a-88f4-0945282ef874">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/capital/{capital}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Capital Chile" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/capital/capital</con:originalUri>
+            <con:assertion type="JsonPath Match" id="188f9eea-e002-4d44-bc12-299dab770cd9" name="JsonPath Match">
+              <con:configuration>
+                <path>$[?(@.capital=='Santiago')].name[0]</path>
+                <content>Chile</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="capital" value="Santiago" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="ae119698-8998-4703-807e-de48b9824bc5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da EU" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="ae119698-8998-4703-807e-de48b9824bc5fileName">Paises---Retorna-paises-da-EU</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Bloco regional EU" id="a17aa331-0616-4dcc-a1d8-019d68066fbe">
+        <con:settings/>
+        <con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Bloco regional EU" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/EU</con:originalUri>
+            <con:assertion type="JsonPath RegEx Match" id="9223ad78-c6e9-4ec2-b084-60fd8c8762c9" name="JsonPath RegEx Match">
+              <con:configuration/>
+            </con:assertion>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="regionalbloc" value="EU" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="add9fdc7-e41a-4079-b6bd-72f548ec0f77" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises que falam portugues" searchProperties="true" timeout="0">
+      <con:settings>
+        <con:setting id="add9fdc7-e41a-4079-b6bd-72f548ec0f77fileName">Paises---Retorna-paises-que-falam-portugues</con:setting>
+      </con:settings>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="restrequest" name="Paises com lingua portuguessa" id="d9e7adf5-e2b8-4807-beec-40593373bfb0">
+        <con:settings/>
+        <con:config service="Paises" methodName="Method 1" resourcePath="/rest/v2/lang/{et}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Paises com lingua portuguessa" id="6ec729b2-eac3-4078-a732-a8ae2ab436f8" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/lang/et</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="et" value="pt" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+  </con:testSuite>
+</con:soapui-project>

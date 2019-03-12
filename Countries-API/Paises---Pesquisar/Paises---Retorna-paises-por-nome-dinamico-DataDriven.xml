@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="53f83e87-dd55-4b50-a0f7-5fbf39710730" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises por nome dinamico DataDriven" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="53f83e87-dd55-4b50-a0f7-5fbf39710730fileName">Paises---Retorna-paises-por-nome-dinamico-DataDriven</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="DataSource" id="6f063a7a-35c2-472a-b1aa-7cec9c69e45a"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>C:/Repositorio de Projetos/soap-ui/DataDriven Countries.csv</fileName><separator>,</separator><trim>true</trim><charset>Cp1252</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>name</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="Method 1 - BUSCAR país por nome parcial dinâmico" id="1aad9152-6a4d-49b0-bc56-89e248a93b5f"><con:settings/><con:config service="Paises" resourcePath="/rest/v2/name/{name}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Method 1 - BUSCAR país por nome parcial dinâmico" id="9007f57d-c6af-4235-9fa7-5d981ac29686" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/name/Spain</con:originalUri><con:assertion type="MessageContentAssertion" id="95cfe020-ec47-4702-a02e-0b382e41a1be" name="Message Content Assertion"><con:configuration xsi:type="con:MessageContentAssertion"><con:elements><con:xpath>//Response[1]/e[1]/name[1]</con:xpath><con:element>name</con:element><con:type xsi:nil="true"/><con:operator>=</con:operator><con:enabled>true</con:enabled><con:expectedValue>${DataSource#name}</con:expectedValue><con:hasValue>false</con:hasValue><con:numberType>false</con:numberType></con:elements><con:originalMessage><![CDATA[<Response>
+   <e>
+      <name>Spain</name>
+      <topLevelDomain>
+         <e>.es</e>
+      </topLevelDomain>
+      <alpha2Code>ES</alpha2Code>
+      <alpha3Code>ESP</alpha3Code>
+      <callingCodes>
+         <e>34</e>
+      </callingCodes>
+      <capital>Madrid</capital>
+      <altSpellings>
+         <e>ES</e>
+         <e>Kingdom of Spain</e>
+         <e>Reino de España</e>
+      </altSpellings>
+      <region>Europe</region>
+      <subregion>Southern Europe</subregion>
+      <population>46438422</population>
+      <latlng>
+         <e>40.0</e>
+         <e>-4.0</e>
+      </latlng>
+      <demonym>Spanish</demonym>
+      <area>505992.0</area>
+      <gini>34.7</gini>
+      <timezones>
+         <e>UTC</e>
+         <e>UTC+01:00</e>
+      </timezones>
+      <borders>
+         <e>AND</e>
+         <e>FRA</e>
+         <e>GIB</e>
+         <e>PRT</e>
+         <e>MAR</e>
+      </borders>
+      <nativeName>España</nativeName>
+      <numericCode>724</numericCode>
+      <currencies>
+         <e>
+            <code>EUR</code>
+            <name>Euro</name>
+            <symbol>€</symbol>
+         </e>
+      </currencies>
+      <languages>
+         <e>
+            <iso639_1>es</iso639_1>
+            <iso639_2>spa</iso639_2>
+            <name>Spanish</name>
+            <nativeName>Español</nativeName>
+         </e>
+      </languages>
+      <translations>
+         <de>Spanien</de>
+         <es>España</es>
+         <fr>Espagne</fr>
+         <ja>スペイン</ja>
+         <it>Spagna</it>
+         <br>Espanha</br>
+         <pt>Espanha</pt>
+         <nl>Spanje</nl>
+         <hr>Španjolska</hr>
+         <fa>اسپانیا</fa>
+      </translations>
+      <flag>https://restcountries.eu/data/esp.svg</flag>
+      <regionalBlocs>
+         <e>
+            <acronym>EU</acronym>
+            <name>European Union</name>
+            <otherAcronyms/>
+            <otherNames/>
+         </e>
+      </regionalBlocs>
+      <cioc>ESP</cioc>
+   </e>
+</Response>]]></con:originalMessage></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="name" value="${DataSource#name}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="85826620-fbd0-46f9-abea-1948d69d38b3"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Method 1 - BUSCAR país por nome parcial dinâmico</targetStep><discardResults>true</discardResults></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

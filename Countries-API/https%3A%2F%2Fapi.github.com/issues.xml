@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="issues" path="/repos/:owner/:repo/issues" id="cc80f45d-55e7-483d-b121-401db298c66a" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cc80f45d-55e7-483d-b121-401db298c66afileName">issues</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d9028305-8731-4586-9335-10c20d29db87" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

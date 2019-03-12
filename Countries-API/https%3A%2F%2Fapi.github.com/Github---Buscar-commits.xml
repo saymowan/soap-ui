@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Buscar commits" path="/search/commits" id="759bf604-f304-431a-a698-d8e9ead3ed19" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="759bf604-f304-431a-a698-d8e9ead3ed19fileName">Github---Buscar-commits</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Buscar commit" id="35672476-dbc1-4ea7-bdfb-3e838b0c6dc0" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>422</con:status>
+      <con:params/>
+      <con:element xmlns:com="https://api.github.com/search/commits">com:Fault</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="7dfc7a7b-d824-4c9b-9c6f-24554ba512df" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.github.com/search/commits</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

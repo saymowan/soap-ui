@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Buscar usuarios" path="/search/users" id="78c35497-f17f-4c0e-8295-af996039c0af" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="78c35497-f17f-4c0e-8295-af996039c0affileName">Github---Buscar-usuarios</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="a158046d-0170-4713-bf27-ec1ed883893d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Usuario" id="214a2fdc-4a90-4d2b-a8ae-2ba71d73f775" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

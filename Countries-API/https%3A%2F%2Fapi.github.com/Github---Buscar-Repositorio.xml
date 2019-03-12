@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Buscar Repositorio" path="/search/repositories" id="fed74c12-5f7d-46b6-8ada-6d508a835035" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fed74c12-5f7d-46b6-8ada-6d508a835035fileName">Github---Buscar-Repositorio</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Pesquisar repositorios" id="4bd2b780-6b33-4b3e-8efa-246cb737134a" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/search/repositories">rep:Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>422</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/search/repositories">rep:Fault</con:element>
+    </con:representation>
+    <con:request name="Pesquisar repositorios" id="39d805db-3419-41d1-a35e-16440e4f5b6c" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.github.com/search/repositories</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="Buscar repositorios ordenando" id="e21a5919-59f2-42ec-8e69-d60156b2a19b" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>sort</con:name>
+        <con:value>stars</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>stars</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Buscar repositorios ordenando" id="2f7a1535-e832-432d-b1b7-bbb6068e295c" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

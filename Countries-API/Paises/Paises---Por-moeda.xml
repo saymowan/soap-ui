@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Paises - Por moeda" path="/rest/v2/currency/{currency}" id="7ce7c0f8-94d4-4394-8281-3eec69a87938" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7ce7c0f8-94d4-4394-8281-3eec69a87938fileName">Paises---Por-moeda</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>currency</con:name>
+      <con:value>currency</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>currency</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="0e0f88b2-9460-4966-911d-7bb029b2e24a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:cur="https://restcountries.eu/rest/v2/currency/currency">cur:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html;charset=utf-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:request name="Moeda" id="c3ae05d1-c524-482b-a64d-660d07d4f289" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://restcountries.eu/rest/v2/currency/currency</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

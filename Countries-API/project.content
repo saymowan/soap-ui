@@ -11,10 +11,12 @@ Paises\Paises---Retorna-todos.xml
 Github\Github---Buscar-Repositorio.xml
 Github\Github---Buscar-commits.xml
 Github\Github---Buscar-usuarios.xml
-Github\Github---Issues.xml
-Github\Github---Gerar-Token.xml
 Github\Github---Criar-Repositorio.xml
 Github\Github---Deletar-Token.xml
+Github\Github---Gerar-Token.xml
+Github\Github---Issues.xml
+Github\Github---Deleter-Repositorio.xml
+Github\Github---Pesquisar-Repositorio.xml
 Paises---Pesquisar\Paises---Retorna-paises-por-nome-dinamico-DataDriven.xml
 Paises---Pesquisar\Paises---Retorna-todos-os-paises.xml
 Paises---Pesquisar\Paises---Retorna-pais-com-moeda-real.xml
@@ -39,3 +41,5 @@ Github1\Pesquisar-commit-Existente.xml
 Github1\Pesquisar-commit-inexistente.xml
 Github1\Gerar-Token.xml
 Github1\Gerar-e-Deletar-Token.xml
+Github1\Criar-Novo-Repositorio.xml
+Github1\Pesquisar-Repositorio-criado.xml

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Issues" path="/repos/{user}/{repository}/issues" id="cc80f45d-55e7-483d-b121-401db298c66a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Issues" path="/repos/{user}/{repository}/issues" id="cc80f45d-55e7-483d-b121-401db298c66a" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="cc80f45d-55e7-483d-b121-401db298c66afileName">Github---Issues</con:setting>
   </con:settings>

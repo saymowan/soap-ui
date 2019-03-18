@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Gerar Token" path="/authorizations" id="be831161-1cda-432a-adb2-118138fae3ed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Gerar Token" path="/authorizations" id="be831161-1cda-432a-adb2-118138fae3ed" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="be831161-1cda-432a-adb2-118138fae3edfileName">Github---Gerar-Token</con:setting>
   </con:settings>
@@ -22,6 +22,7 @@
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
         <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

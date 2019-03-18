@@ -14,7 +14,7 @@
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request>{
   "scopes": [
-    "public_repo"
+    "public_repo", "delete_repo"
   ],
   "note": "soapui project"
 }</con:request>

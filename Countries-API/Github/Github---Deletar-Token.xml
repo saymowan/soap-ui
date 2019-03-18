@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Deletar Token" path="/authorizations/{authorization_id}" id="cb30c635-ba77-41b1-99a7-945dcc06189e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Deletar Token" path="/authorizations/{authorization_id}" id="cb30c635-ba77-41b1-99a7-945dcc06189e" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="cb30c635-ba77-41b1-99a7-945dcc06189efileName">Github---Deletar-Token</con:setting>
   </con:settings>
@@ -16,7 +16,7 @@
     <con:parameters/>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>401</con:status>
+      <con:status>401 403</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/authorizations/270904084">ns:Fault</con:element>
     </con:representation>
@@ -29,6 +29,10 @@
       <con:status>204</con:status>
       <con:params/>
       <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
     </con:representation>
     <con:request name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
       <con:settings>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Criar Repositorio" path="/user/repos" id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Criar Repositorio" path="/user/repos" id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5e" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5efileName">Github---Criar-Repositorio</con:setting>
   </con:settings>
@@ -49,49 +49,23 @@
         <con:style>QUERY</con:style>
         <con:default/>
       </con:parameter>
-      <con:parameter required="true">
-        <con:name>team_id</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>auto_init</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>gitignore_template</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>license_template</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>allow_squash_merge</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>allow_merge_commit</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>allow_rebase_merge</con:name>
-        <con:value/>
-        <con:style>QUERY</con:style>
-        <con:default/>
-      </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401 400 422</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/user/repos">rep:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>201</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/user/repos">rep:Response</con:element>
+    </con:representation>
     <con:request name="Criar Repositorio" id="0a46d173-8386-4874-8bd0-7d146759326d" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -107,6 +81,7 @@
   "has_wiki": true
 }</con:request>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -125,13 +100,6 @@
         <con:entry>has_issues</con:entry>
         <con:entry>has_projects</con:entry>
         <con:entry>has_wiki</con:entry>
-        <con:entry>team_id</con:entry>
-        <con:entry>auto_init</con:entry>
-        <con:entry>gitignore_template</con:entry>
-        <con:entry>license_template</con:entry>
-        <con:entry>allow_squash_merge</con:entry>
-        <con:entry>allow_merge_commit</con:entry>
-        <con:entry>allow_rebase_merge</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

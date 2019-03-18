@@ -20,7 +20,7 @@
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>c64af66f62fc0f8e159257b94ef0a408f10f36ac</con:value>
+      <con:value>ba17e91567446e5828980e3781f8e6ddb4dc3941</con:value>
     </con:property>
     <con:property>
       <con:name>repository</con:name>
@@ -32,7 +32,11 @@
     </con:property>
     <con:property>
       <con:name>token_id</con:name>
-      <con:value>270909066</con:value>
+      <con:value>270919135</con:value>
+    </con:property>
+    <con:property>
+      <con:name>bearer</con:name>
+      <con:value>bearer</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
@@ -53,14 +57,6 @@
     </con:oAuth2Profile>
   </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
-  <con:eventHandlers type="TestRunListener.beforeRun" name="TestRunListener.beforeRun">
-    <con:script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
-testSuite = project.getTestSuiteByName("Github");
-testCase = testSuite.getTestCaseByName("Gerar Token");
-
-//run test
-runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</con:script>
-  </con:eventHandlers>
   <con:authRepository/>
   <con:tags/>
   <con:sensitiveInformation/>

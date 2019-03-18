@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="8e773198-64c5-4d2a-9367-a84f0d49deaf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pesquisar commit Existente" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8e773198-64c5-4d2a-9367-a84f0d49deaffileName">Pesquisar-commit-Existente</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Pesquisar Mateca e bem legal" id="437d9a4a-abd5-483c-9706-3dea3e0d88fd">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/search/commits" methodName="Buscar commit" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Pesquisar Mateca e bem legal" id="7dfc7a7b-d824-4c9b-9c6f-24554ba512df" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/vnd.github.cloak-preview" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.github.com/search/commits</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="84dc181f-db22-4908-ac32-28306e597e04" name="Retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="23775f0b-5037-4547-a6b0-03149f5ddf9f" name="Mensagem  Commit &quot;mateca e bem legal&quot;">
+          <con:configuration>
+            <path>$['items'][0]['commit']['message']</path>
+            <content>mateca e bem legal</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="q" value=" mateca e bem legal" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>q</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

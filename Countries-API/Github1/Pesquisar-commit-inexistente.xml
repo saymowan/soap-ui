@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="594462d4-8ac1-4425-9dc1-ce6a2edad6ac" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pesquisar commit inexistente" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="594462d4-8ac1-4425-9dc1-ce6a2edad6acfileName">Pesquisar-commit-inexistente</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Pesquisar commit inexistente" id="d0a0026c-7b4c-417d-857e-b34db70069a2">
+    <con:settings/>
+    <con:config service="Github" methodName="Buscar commit" resourcePath="/search/commits" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Pesquisar commit inexistente" id="530b44ae-ba0f-40d3-b894-6bd40a982b7b" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/vnd.github.cloak-preview" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.github.com/search/commits</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="70ee357a-7438-4337-a42b-033aed47f528" name="Retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e0a23e36-44f6-48f0-824d-83c4a7ebf142" name="Valida retorno sem dados">
+          <con:configuration>
+            <path>$['total_count']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="q" value="nomeinvalidoinexistente" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

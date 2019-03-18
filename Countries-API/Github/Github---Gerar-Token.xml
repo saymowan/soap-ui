@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Gerar Token" path="/authorizations" id="be831161-1cda-432a-adb2-118138fae3ed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="be831161-1cda-432a-adb2-118138fae3edfileName">Github---Gerar-Token</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>authorization_id</con:name>
+      <con:style>QUERY</con:style>
+    </con:parameter>
+  </con:parameters>
+  <con:resource name="" path="" id="37f6c739-41e4-4e51-b3b4-1680b1ba801e">
+    <con:settings>
+      <con:setting id="37f6c739-41e4-4e51-b3b4-1680b1ba801efileName">Github---Autenticacao</con:setting>
+    </con:settings>
+    <con:parameters/>
+    <con:method name="Method 1" id="a836780d-66d1-4e07-8ad3-e4709c9f8bd1" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="0cca4d13-e817-4704-98ab-0b5cfab2dbe6" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="GerarToken" id="5781fbb6-1b6f-4c2c-83fe-a44b56c885ff" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>scopes</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>note</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>note_url</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>client_id</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>client_secret</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>fingerprint</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401 422 404</con:status>
+      <con:params/>
+      <con:element xmlns:aut="https://api.github.com/authorizations">aut:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>201</con:status>
+      <con:params/>
+      <con:element xmlns:aut="https://api.github.com/authorizations">aut:Response</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Gerar Token" id="a77c41c9-2c6a-4482-b297-75ce6d02e608" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request>{
+  "scopes": [
+    "public_repo"
+  ],
+  "note": "soapui project"
+}</con:request>
+      <con:originalUri>https://api.github.com/authorizations</con:originalUri>
+      <con:credentials>
+        <con:username>basedoissoapui</con:username>
+        <con:password>Base23456</con:password>
+        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+        <con:preemptive>true</con:preemptive>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>Preemptive</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="client_secret" value="${#Project#client_secret}"/>
+        <con:entry key="client_id" value="${#Project#client_id}"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>scopes</con:entry>
+        <con:entry>note</con:entry>
+        <con:entry>note_url</con:entry>
+        <con:entry>client_id</con:entry>
+        <con:entry>client_secret</con:entry>
+        <con:entry>fingerprint</con:entry>
+        <con:entry>authorization_id</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

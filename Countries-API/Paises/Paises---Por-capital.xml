@@ -1,2 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Paises - Por capital" path="/rest/v2/capital/{capital}" id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7fileName">Paises---Por-capital</con:setting></con:settings><con:parameters><con:parameter><con:name>capital</con:name><con:value>capital</con:value><con:style>TEMPLATE</con:style><con:default>capital</con:default></con:parameter></con:parameters><con:method name="Method 1" id="60be3020-989f-4523-a577-3ca5219a0595" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:cap="https://restcountries.eu/rest/v2/capital/capital">cap:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Capital" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json"><con:settings/><con:endpoint>https://restcountries.eu</con:endpoint><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:parameters/></con:request></con:method></con:resource>
+<con:resource name="Paises - Por capital" path="/rest/v2/capital/{capital}" id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c15ce4c7-3a1f-4072-9707-7dfbad50ecc7fileName">Paises---Por-capital</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>capital</con:name>
+      <con:value>capital</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>capital</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="60be3020-989f-4523-a577-3ca5219a0595" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:cap="https://restcountries.eu/rest/v2/capital/capital">cap:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Capital" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

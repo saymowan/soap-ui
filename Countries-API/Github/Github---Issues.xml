@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Issues" path="/repos/{user}/{repository}/issues" id="cc80f45d-55e7-483d-b121-401db298c66a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cc80f45d-55e7-483d-b121-401db298c66afileName">Github---Issues</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>user</con:name>
+      <con:value>user</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>user</con:default>
+    </con:parameter>
+    <con:parameter>
+      <con:name>repository</con:name>
+      <con:value>repository</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>repository</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="d9028305-8731-4586-9335-10c20d29db87" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:iss="https://api.github.com/repos/saymowan/docker-mariadb-seleniumgrid-IC-POM/issues">iss:Fault</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request>{
+  "title": "Found a bug",
+  "body": "I'm having a problem with this.",
+  "assignees": [
+    "octocat"
+  ],
+  "milestone": 1,
+  "labels": [
+    "bug"
+  ]
+}</con:request>
+      <con:originalUri>https://api.github.com/repos/saymowan/docker-mariadb-seleniumgrid-IC-POM/issues</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>user</con:entry>
+        <con:entry>repository</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

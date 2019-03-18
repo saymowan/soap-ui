@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="54ed2fa6-f6af-47d6-ab3a-10e787ab4fef" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Gerar Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="54ed2fa6-f6af-47d6-ab3a-10e787ab4feffileName">Gerar-Token</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GerarToken" id="752fa9fd-2ca2-4572-828e-2655c35faad5">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/authorizations" methodName="GerarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GerarToken" id="a77c41c9-2c6a-4482-b297-75ce6d02e608" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "scopes": [
+    "public_repo"
+  ],
+  "note": "soapui project"
+}</con:request>
+        <con:originalUri>https://api.github.com/authorizations</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="280ec7b4-a24b-4c86-876c-3d36b17f7620" name="Retorno 201">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0611c4e8-594f-47bb-8596-721a4233bcd3" name="JsonPath Match">
+          <con:configuration>
+            <path>$['app']['name']</path>
+            <content>soapui project</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>basedoissoapui</con:username>
+          <con:password>Base23456</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Preemptive</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="client_secret" value="${#Project#client_secret}"/>
+          <con:entry key="client_id" value="${#Project#client_id}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>scopes</con:entry>
+          <con:entry>note</con:entry>
+          <con:entry>note_url</con:entry>
+          <con:entry>client_id</con:entry>
+          <con:entry>client_secret</con:entry>
+          <con:entry>fingerprint</con:entry>
+          <con:entry>authorization_id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Transferir Token" id="08b5e8c5-3838-4fee-9fae-aa78ee7a48fb">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>token_id</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>GerarToken</con:sourceStep>
+        <con:sourcePath>$['id']</con:sourcePath>
+        <con:targetType>token_id</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>token</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>GerarToken</con:sourceStep>
+        <con:sourcePath>$['token']</con:sourcePath>
+        <con:targetType>token</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

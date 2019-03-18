@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Buscar usuarios" path="/search/users" id="78c35497-f17f-4c0e-8295-af996039c0af" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Buscar usuarios" path="/search/users" id="78c35497-f17f-4c0e-8295-af996039c0af" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="78c35497-f17f-4c0e-8295-af996039c0affileName">Github---Buscar-usuarios</con:setting>
   </con:settings>
@@ -14,13 +14,21 @@
         <con:default/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>422</con:status>
+      <con:params/>
+      <con:element xmlns:user="https://api.github.com/search/users">user:Fault</con:element>
+    </con:representation>
     <con:request name="Usuario" id="214a2fdc-4a90-4d2b-a8ae-2ba71d73f775" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
       <con:endpoint>https://api.github.com</con:endpoint>
       <con:request/>
+      <con:originalUri>https://api.github.com/search/users</con:originalUri>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

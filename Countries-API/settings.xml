@@ -5,7 +5,36 @@
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>client_id</con:name>
+      <con:value>e50a2b829cdc4b684691</con:value>
+    </con:property>
+    <con:property>
+      <con:name>client_secret</con:name>
+      <con:value>010fb15320261dbf3bf2584dd0579531cbcf38e5</con:value>
+    </con:property>
+    <con:property>
+      <con:name>github_user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token</con:name>
+      <con:value>c64af66f62fc0f8e159257b94ef0a408f10f36ac</con:value>
+    </con:property>
+    <con:property>
+      <con:name>repository</con:name>
+      <con:value>mateca</con:value>
+    </con:property>
+    <con:property>
+      <con:name>user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token_id</con:name>
+      <con:value>270909066</con:value>
+    </con:property>
+  </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
@@ -24,6 +53,14 @@
     </con:oAuth2Profile>
   </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
+  <con:eventHandlers type="TestRunListener.beforeRun" name="TestRunListener.beforeRun">
+    <con:script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
+testSuite = project.getTestSuiteByName("Github");
+testCase = testSuite.getTestCaseByName("Gerar Token");
+
+//run test
+runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</con:script>
+  </con:eventHandlers>
   <con:authRepository/>
   <con:tags/>
   <con:sensitiveInformation/>

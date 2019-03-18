@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="d563f488-eb6d-4610-a625-134b0ef7aaf3" wadlVersion="http://wadl.dev.java.net/2009/02" name="Github" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d563f488-eb6d-4610-a625-134b0ef7aaf3fileName">Github</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://api.github.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

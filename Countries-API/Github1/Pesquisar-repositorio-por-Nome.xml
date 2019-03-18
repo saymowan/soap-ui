@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="12d23e31-bfce-46fa-9b69-653e846671a6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pesquisar repositorio por Nome" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="12d23e31-bfce-46fa-9b69-653e846671a6fileName">Pesquisar-repositorio-por-Nome</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Busca por Nome valido" id="87d8d4ba-df49-4f16-9e80-1bdc10f57f0d">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/search/repositories" methodName="Pesquisar repositorios" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Busca por Nome valido" id="39d805db-3419-41d1-a35e-16440e4f5b6c" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.github.com/search/repositories</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cb62c813-76d3-495f-b88a-dc98f7a6ed26" name="Retorno sucesso - 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="813a57f9-47bd-4991-8ba5-b894cd394b0a" name="Verifica nome conforme pesquisa">
+          <con:configuration>
+            <path>$['items'][0]['full_name']</path>
+            <content>saymowan/docker-mariadb-seleniumgrid-IC-POM</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="q" value="docker-mariadb-seleniumgrid-IC-POM" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>q</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

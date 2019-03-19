@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6771af84-c4c7-434a-b410-bede1f0569ab" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Issue - Atualizar como Resolved" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6771af84-c4c7-434a-b410-bede1f0569abfileName">Issue---Atualizar-como-Resolved</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

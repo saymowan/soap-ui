@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Listar issues" path="/user/issues" id="2dae0d3e-6b85-4aa3-9081-37326c2d98ba" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2dae0d3e-6b85-4aa3-9081-37326c2d98bafileName">Github---Listar-issues</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="f89dc72d-f29e-4a53-983b-81bbfabae03a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="ea622173-981f-4f98-89a4-d7acd11f4b82" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

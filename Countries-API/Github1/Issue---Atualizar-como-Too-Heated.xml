@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="193c498b-af0f-4a8a-9933-118c3c25825c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Issue - Atualizar como Too Heated" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="193c498b-af0f-4a8a-9933-118c3c25825cfileName">Issue---Atualizar-como-Too-Heated</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

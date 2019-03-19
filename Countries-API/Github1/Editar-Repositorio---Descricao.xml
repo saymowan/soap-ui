@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="f38facf1-ab50-46a5-ae6c-a02174303b21" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pesquisar Repositorio criado" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="5225b894-bba2-4c0d-8848-5cf37e1d73df" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Editar Repositorio - Descricao" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="f38facf1-ab50-46a5-ae6c-a02174303b21fileName">Pesquisar-Repositorio-criado</con:setting>
+    <con:setting id="5225b894-bba2-4c0d-8848-5cf37e1d73dffileName">Editar-Repositorio---Descricao</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Gerar Token" id="c5006d17-2654-4fd4-bdef-1288b323abb6">
+  <con:testStep type="groovy" name="Gerar Token" id="5320e34e-cfba-44d8-87df-50713514f2c5">
     <con:settings/>
     <con:config>
       <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
@@ -15,7 +15,7 @@ testCase = testSuite.getTestCaseByName("Gerar Token");
 runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Criar Repositorio" id="156d43a2-849d-43a6-a999-10d06e388598">
+  <con:testStep type="restrequest" name="Criar Repositorio" id="b3fb13f4-9219-4ecc-b40a-b89ce7d2a238">
     <con:settings/>
     <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Criar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
@@ -82,27 +82,64 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="e148af2c-fb06-4593-8e8d-e668f7146576">
+  <con:testStep type="restrequest" name="Editar Repositorio - Descricao" id="d9f6c189-8378-4dfa-82c1-2e3c4f83364a">
     <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false" disabled="false">
-        <con:name>novo_repositorio</con:name>
-        <con:sourceType>name</con:sourceType>
-        <con:sourceStep>Criar Repositorio</con:sourceStep>
-        <con:sourcePath/>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Pesquisar Repositorio</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
+    <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Editar Repositorio" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Editar Repositorio - Descricao" id="7c8f4ab0-01d6-45c0-9fb9-7c72e2bb2bd5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "name": "GithubBase2",
+  "description": "Descricao Atualizada",
+  "homepage": "https://github.com",
+  "private": false,
+  "has_issues": true,
+  "has_projects": true,
+  "has_wiki": true
+}</con:request>
+        <con:originalUri>https://api.github.com/repos/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="c1e7c842-503c-4255-ba31-f9c894fab36a" name="Valida retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f1660314-3dea-4bcd-aa8a-bf5027921f7a" name="Valida descricao repositorio atualizada">
+          <con:configuration>
+            <path>$['description']</path>
+            <content>Descricao Atualizada</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="owner" value="${#Project#github_user}"/>
+          <con:entry key="repo" value="GithubBase2"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>owner</con:entry>
+          <con:entry>repo</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Pesquisar Repositorio" id="e5b56121-28e4-4fbc-9859-4a062fa2fabd">
+  <con:testStep type="restrequest" name="Pesquisar Repositorio com Descricao Atualizada" id="cb1660aa-a371-42dc-8f45-f2d90f829cb9">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Pesquisar Repositorio" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Pesquisar Repositorio" id="547a76f6-d02f-4564-948e-c388abbed067" mediaType="application/json">
+      <con:restRequest name="Pesquisar Repositorio com Descricao Atualizada" id="547a76f6-d02f-4564-948e-c388abbed067" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -133,6 +170,15 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
+        <con:assertion type="JsonPath Match" id="18ce5834-2d78-4999-b6d9-99849b1feb18" name="Valida campo descrição - &quot;Descricao Atualizada&quot;">
+          <con:configuration>
+            <path>$['description']</path>
+            <content>Descricao Atualizada</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -150,7 +196,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Repositorio" id="72ac2512-ee34-4718-bb84-19d39e825379">
+  <con:testStep type="restrequest" name="Deletar Repositorio" id="60583d25-f130-4e32-b6be-f7b259f200d0">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Deletar Repositorio" id="e0598377-df47-4fa7-b9d4-781e742eb622" mediaType="application/json" postQueryString="false">
@@ -187,7 +233,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Token" id="a1b0f4eb-031e-4e9d-84b4-afdca6f68277">
+  <con:testStep type="restrequest" name="Deletar Token" id="a41322c7-bf06-444d-a172-c5364669dde6">
     <con:settings/>
     <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
@@ -225,7 +271,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>72ac2512-ee34-4718-bb84-19d39e825379</con:testStepId>
+    <con:testStepId>cb1660aa-a371-42dc-8f45-f2d90f829cb9</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

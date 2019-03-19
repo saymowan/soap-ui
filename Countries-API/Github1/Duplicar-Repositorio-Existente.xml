@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="f38facf1-ab50-46a5-ae6c-a02174303b21" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pesquisar Repositorio criado" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="5131fce7-f7ab-4108-9b5f-350dd076f1b0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Duplicar Repositorio Existente" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="f38facf1-ab50-46a5-ae6c-a02174303b21fileName">Pesquisar-Repositorio-criado</con:setting>
+    <con:setting id="5131fce7-f7ab-4108-9b5f-350dd076f1b0fileName">Duplicar-Repositorio-Existente</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Gerar Token" id="c5006d17-2654-4fd4-bdef-1288b323abb6">
+  <con:testStep type="groovy" name="Gerar Token" id="fd4f8391-e52f-424d-ba87-852d2c92ff70">
     <con:settings/>
     <con:config>
       <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
@@ -15,7 +15,7 @@ testCase = testSuite.getTestCaseByName("Gerar Token");
 runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Criar Repositorio" id="156d43a2-849d-43a6-a999-10d06e388598">
+  <con:testStep type="restrequest" name="Criar Repositorio" id="5aab6eb2-9a69-4a19-ac41-9caa8d372885">
     <con:settings/>
     <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Criar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
@@ -82,7 +82,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="e148af2c-fb06-4593-8e8d-e668f7146576">
+  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="71de069e-b07a-4847-a10d-494c09992b96">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false" disabled="false">
@@ -91,7 +91,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceStep>Criar Repositorio</con:sourceStep>
         <con:sourcePath/>
         <con:targetType>repo</con:targetType>
-        <con:targetStep>Pesquisar Repositorio</con:targetStep>
+        <con:targetStep>Deletar Repositorio</con:targetStep>
         <con:targetPath/>
         <con:type>JSONPATH</con:type>
         <con:targetTransferType>JSONPATH</con:targetTransferType>
@@ -99,58 +99,74 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Pesquisar Repositorio" id="e5b56121-28e4-4fbc-9859-4a062fa2fabd">
+  <con:testStep type="restrequest" name="Duplicar Repositorio" id="8f72ed7d-ee99-4ae0-9bf1-c2cec026c204">
     <con:settings/>
-    <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Pesquisar Repositorio" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Pesquisar Repositorio" id="547a76f6-d02f-4564-948e-c388abbed067" mediaType="application/json">
+    <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Duplicar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+          <con:setting id="RecordRequestRepresentations">true</con:setting>
         </con:settings>
+        <con:encoding>UTF-8</con:encoding>
         <con:endpoint>https://api.github.com</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.github.com/repos/</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="1f4387b5-5fe8-47c8-a2f7-fe1d5b9f7a41" name="Valid HTTP Status Codes">
+        <con:request>{
+  "name": "GithubBase2",
+  "description": "Primeiro repositorio maneiro da Base2",
+  "homepage": "https://github.com",
+  "private": false,
+  "has_issues": true,
+  "has_projects": true,
+  "has_wiki": true
+}</con:request>
+        <con:originalUri>https://api.github.com/user/repos</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3d48957d-e312-4c20-b905-758cea911c72" name="Valida retorno 422">
           <con:settings/>
           <con:configuration>
-            <codes>200</codes>
+            <codes>422</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Match" id="3db8e1dd-a754-4233-af5b-f2e7930ec1ca" name="Valida nome repositorio">
+        <con:assertion type="JsonPath Match" id="36d55e4d-84bd-452a-a371-4723c22022a0" name="Valida retorno - repositório já criado">
           <con:configuration>
-            <path>$['name']</path>
-            <content>${Criar Repositorio#name}</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="JsonPath Match" id="5d84721e-4af1-4e04-8490-40d54954e6e4" name="Valida usuario ">
-          <con:configuration>
-            <path>$['owner']['login']</path>
-            <content>${#Project#github_user}</content>
+            <path>$['errors'][0]['message']</path>
+            <content>name already exists on this account</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
         <con:credentials>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="repo" value="GithubBase2"/>
+          <con:entry key="has_projects" value="true"/>
+          <con:entry key="private" value="false"/>
+          <con:entry key="has_wiki" value="true"/>
+          <con:entry key="name" value="GithubBase2"/>
+          <con:entry key="description" value="Primeiro repositorio maneiro da Base2"/>
+          <con:entry key="has_issues" value="true"/>
+          <con:entry key="homepage" value="https://github.com"/>
         </con:parameters>
         <con:parameterOrder>
-          <con:entry>owner</con:entry>
-          <con:entry>repo</con:entry>
+          <con:entry>name</con:entry>
+          <con:entry>description</con:entry>
+          <con:entry>homepage</con:entry>
+          <con:entry>private</con:entry>
+          <con:entry>has_issues</con:entry>
+          <con:entry>has_projects</con:entry>
+          <con:entry>has_wiki</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Repositorio" id="72ac2512-ee34-4718-bb84-19d39e825379">
+  <con:testStep type="restrequest" name="Deletar Repositorio" id="b4bd165e-d529-43a7-8716-317e56c25123">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Deletar Repositorio" id="e0598377-df47-4fa7-b9d4-781e742eb622" mediaType="application/json" postQueryString="false">
@@ -187,7 +203,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Token" id="a1b0f4eb-031e-4e9d-84b4-afdca6f68277">
+  <con:testStep type="restrequest" name="Deletar Token" id="d61c805a-57ea-430f-89b5-6d72030cc4a0">
     <con:settings/>
     <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
@@ -225,7 +241,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
-    <con:testStepId>72ac2512-ee34-4718-bb84-19d39e825379</con:testStepId>
+    <con:testStepId>71de069e-b07a-4847-a10d-494c09992b96</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

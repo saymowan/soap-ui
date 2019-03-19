@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="181ad254-0ff9-4946-8d8b-15df3e59fe27" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Issue - Atualizar como Spam" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="181ad254-0ff9-4946-8d8b-15df3e59fe27fileName">Issue---Atualizar-como-Spam</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

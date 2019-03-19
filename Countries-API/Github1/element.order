@@ -6,3 +6,14 @@ Gerar-Token.xml
 Gerar-e-Deletar-Token.xml
 Criar-Novo-Repositorio.xml
 Pesquisar-Repositorio-criado.xml
+Criar-Novo-Repositorio-sem-nome.xml
+Duplicar-Repositorio-Existente.xml
+Editar-Repositorio.xml
+Editar-Repositorio---Descricao.xml
+Criar-issue.xml
+Editar-issue.xml
+Issue---Atualizar-como-Resolved.xml
+Issue---Atualizar-como-Spam.xml
+Issue---Atualizar-como-Too-Heated.xml
+Issue---Atualizar-como-Off-topic.xml
+Issue---Desbloquear-Issue.xml

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="cd7d1572-c9be-4a5b-9aeb-efaec8af45b0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Editar issue" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cd7d1572-c9be-4a5b-9aeb-efaec8af45b0fileName">Editar-issue</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

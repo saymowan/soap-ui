@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="985a0951-708d-4e35-9c3b-2e7490cd56a8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Issue - Desbloquear Issue" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="985a0951-708d-4e35-9c3b-2e7490cd56a8fileName">Issue---Desbloquear-Issue</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

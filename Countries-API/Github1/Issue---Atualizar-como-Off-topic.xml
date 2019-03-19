@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="045eb200-a75b-4806-8629-a3967e425cf9" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Issue - Atualizar como Off-topic" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="045eb200-a75b-4806-8629-a3967e425cf9fileName">Issue---Atualizar-como-Off-topic</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

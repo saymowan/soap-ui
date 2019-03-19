@@ -56,7 +56,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>401 400 422</con:status>
+      <con:status>401 400 422 403</con:status>
       <con:params/>
       <con:element xmlns:rep="https://api.github.com/user/repos">rep:Fault</con:element>
     </con:representation>

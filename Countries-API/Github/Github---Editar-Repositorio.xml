@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Editar Repositorio" path="/repos/{owner}/{repo}" id="f0fa9208-76ad-482b-8149-a07c1ac95a8c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f0fa9208-76ad-482b-8149-a07c1ac95a8cfileName">Github---Editar-Repositorio</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>owner</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>repo</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Editar Repositorio" id="b22adbf8-91e4-49d9-88b9-8daca1714b0c" method="PATCH">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401 404 400</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/repos/">rep:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:rep="https://api.github.com/repos/">rep:Response</con:element>
+    </con:representation>
+    <con:request name="Editar Repositorio" id="7c8f4ab0-01d6-45c0-9fb9-7c72e2bb2bd5" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://api.github.com/repos/</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="owner" value=""/>
+        <con:entry key="repo" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>owner</con:entry>
+        <con:entry>repo</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

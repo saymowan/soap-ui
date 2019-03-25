@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Pesquisar Repositorio" path="/repos/{owner}/{repo}" id="65ba1370-d253-41c6-b9b8-145363029bd6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Pesquisar Repositorio" path="/repos/{owner}/{repo}" id="65ba1370-d253-41c6-b9b8-145363029bd6" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="65ba1370-d253-41c6-b9b8-145363029bd6fileName">Github---Pesquisar-Repositorio</con:setting>
   </con:settings>

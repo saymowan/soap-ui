@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Pesquisar issue" path="/repos/{owner}/{repo}/issues/{number}" id="7c62c70e-4bfc-4aad-9978-9e4bfe370599" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Pesquisar issue" path="/repos/{owner}/{repo}/issues/{number}" id="7c62c70e-4bfc-4aad-9978-9e4bfe370599" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
     <con:setting id="7c62c70e-4bfc-4aad-9978-9e4bfe370599fileName">Github---Pesquisar-issue</con:setting>
   </con:settings>
@@ -23,7 +23,7 @@
       <con:default/>
     </con:parameter>
   </con:parameters>
-  <con:method name="Method 1" id="9484f0d8-edbf-4a5e-b984-dd247af0a602" method="GET">
+  <con:method name="Method 1" id="9484f0d8-edbf-4a5e-b984-dd247af0a602" method="PATCH">
     <con:settings/>
     <con:parameters/>
     <con:representation type="FAULT">
@@ -32,7 +32,17 @@
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/422496945">ns:Fault</con:element>
     </con:representation>
-    <con:request name="Pesquisar issue" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json">
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/422496945">ns:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Pesquisar issue" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
@@ -53,6 +63,32 @@
         <con:entry>repo</con:entry>
         <con:entry>number</con:entry>
       </con:parameterOrder>
+    </con:request>
+    <con:request name="Editar Issue" id="8776d0d4-1d3e-45b6-b31e-7f0286916815" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request>{
+  "title": "Found a bugzinhooooo",
+  "body": "I'm having a problem with this."
+}</con:request>
+      <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1</con:originalUri>
+      <con:credentials>
+        <con:username>basedoissoapui</con:username>
+        <con:password>Base23456</con:password>
+        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+        <con:preemptive>true</con:preemptive>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>Preemptive</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
     </con:request>
   </con:method>
 </con:resource>

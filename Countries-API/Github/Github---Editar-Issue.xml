@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Editar Repositorio" path="/repos/{owner}/{repo}" id="f0fa9208-76ad-482b-8149-a07c1ac95a8c" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:resource name="Github - Editar Issue" path="/repos/{owner}/{repo}/issues/{number}" id="4984b427-82e7-4353-b9af-075a64e12b22" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="f0fa9208-76ad-482b-8149-a07c1ac95a8cfileName">Github---Editar-Repositorio</con:setting>
+    <con:setting id="4984b427-82e7-4353-b9af-075a64e12b22fileName">Github---Editar-Issue</con:setting>
   </con:settings>
   <con:parameters>
     <con:parameter>
@@ -16,8 +16,14 @@
       <con:style>TEMPLATE</con:style>
       <con:default/>
     </con:parameter>
+    <con:parameter>
+      <con:name>number</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
   </con:parameters>
-  <con:method name="Editar Repositorio" id="b22adbf8-91e4-49d9-88b9-8daca1714b0c" method="PATCH">
+  <con:method name="Method 1" id="bb4e80ce-1dc6-4347-8983-7236bd96c081" method="PATCH">
     <con:settings/>
     <con:parameters/>
     <con:representation type="REQUEST">
@@ -26,17 +32,17 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>401 404 400 422</con:status>
+      <con:status>422</con:status>
       <con:params/>
-      <con:element xmlns:rep="https://api.github.com/repos/">rep:Fault</con:element>
+      <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1">ns:Fault</con:element>
     </con:representation>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:element xmlns:rep="https://api.github.com/repos/">rep:Response</con:element>
+      <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1">ns:Response</con:element>
     </con:representation>
-    <con:request name="Editar Repositorio" id="7c8f4ab0-01d6-45c0-9fb9-7c72e2bb2bd5" mediaType="application/json" postQueryString="false">
+    <con:request name="Editar Issue" id="bdaef562-0866-4ed4-8cb1-40fff1bb2f06" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -45,20 +51,30 @@
 &lt;/xml-fragment></con:setting>
       </con:settings>
       <con:endpoint>https://api.github.com</con:endpoint>
-      <con:request/>
-      <con:originalUri>https://api.github.com/repos/</con:originalUri>
+      <con:request>{
+  "title": "Found a bugzinho",
+  "body": "I'm having a problem with this."
+}</con:request>
+      <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1</con:originalUri>
       <con:credentials>
-        <con:authType>No Authorization</con:authType>
+        <con:username>basedoissoapui</con:username>
+        <con:password>Base23456</con:password>
+        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+        <con:preemptive>true</con:preemptive>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>Preemptive</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:jmsPropertyConfig/>
       <con:parameters>
-        <con:entry key="owner" value=""/>
-        <con:entry key="repo" value=""/>
+        <con:entry key="owner" value="basedoissoapui"/>
+        <con:entry key="number" value="1"/>
+        <con:entry key="repo" value="Repositorio-Issues"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>owner</con:entry>
         <con:entry>repo</con:entry>
+        <con:entry>number</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

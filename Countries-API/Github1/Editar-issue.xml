@@ -4,6 +4,229 @@
     <con:setting id="cd7d1572-c9be-4a5b-9aeb-efaec8af45b0fileName">Editar-issue</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Gerar Token" id="2352164a-8016-4007-bbd7-ebdefd47bac2">
+    <con:settings/>
+    <con:config>
+      <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
+testSuite = project.getTestSuiteByName("Github");
+testCase = testSuite.getTestCaseByName("Gerar Token");
+
+//run test
+runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Criar Repositorio" id="e3bb2e7b-c784-47c6-9fa3-9dfca89de72d">
+    <con:settings/>
+    <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Criar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+          <con:setting id="RecordRequestRepresentations">true</con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "name": "Repositorio Issues",
+  "description": "Primeiro repositorio maneiro da Base2",
+  "homepage": "https://github.com",
+  "private": false,
+  "has_issues": true,
+  "has_projects": true,
+  "has_wiki": true
+}</con:request>
+        <con:originalUri>https://api.github.com/user/repos</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3d48957d-e312-4c20-b905-758cea911c72" name="Valida retorno 201">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="36d55e4d-84bd-452a-a371-4723c22022a0" name="Valida tipo usuario">
+          <con:configuration>
+            <path>$['owner']['type']</path>
+            <content>User</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>name</con:entry>
+          <con:entry>description</con:entry>
+          <con:entry>homepage</con:entry>
+          <con:entry>private</con:entry>
+          <con:entry>has_issues</con:entry>
+          <con:entry>has_projects</con:entry>
+          <con:entry>has_wiki</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="3c3c29c4-8e9f-4472-a6c8-a793524ba0dd">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>novo_repositorio</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Criar Repositorio</con:sourceStep>
+        <con:sourcePath>$['name']</con:sourcePath>
+        <con:targetType>repository</con:targetType>
+        <con:targetStep>Criar Issue</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>novo_repositorio_issue</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Criar Repositorio</con:sourceStep>
+        <con:sourcePath>$['name']</con:sourcePath>
+        <con:targetType>repository</con:targetType>
+        <con:targetStep>Criar Issue</con:targetStep>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>XPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>novo_repo_editar_issue</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Criar Repositorio</con:sourceStep>
+        <con:sourcePath>$['name']</con:sourcePath>
+        <con:targetType>repo</con:targetType>
+        <con:targetStep>Editar Issue</con:targetStep>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Criar Issue" id="0ab26ad2-5438-475a-b72f-a2910e9a690c">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/repos/{user}/{repository}/issues" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Criar Issue" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "title": "Found a bug"
+}</con:request>
+        <con:originalUri>https://api.github.com/repos/saymowan/docker-mariadb-seleniumgrid-IC-POM/issues</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="582a98f7-21f5-4700-b07c-c59dc54d18eb" name="Valida login confome configuração global">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="482b432c-bf4c-4858-9a05-08e2c182514e" name="JsonPath Match">
+          <con:configuration>
+            <path>$['user']['login']</path>
+            <content>${#Project#github_user}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="repository" value="Repositorio-Issues"/>
+          <con:entry key="user" value="${#Project#github_user}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>user</con:entry>
+          <con:entry>repository</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Transferir NUMERO Issue Criada" id="b71ae389-706c-4024-ab4e-fcb1cb7a2bda">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>novo_repositorio</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Criar Issue</con:sourceStep>
+        <con:sourcePath>$['number']</con:sourcePath>
+        <con:targetType>number</con:targetType>
+        <con:targetStep>Editar Issue</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Editar Issue" id="1efd6784-f35e-4570-89a2-2d95e6f45aa8">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Editar Issue" id="8776d0d4-1d3e-45b6-b31e-7f0286916815" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "title": "Found a bugzinho",
+  "body": "I'm having a problem with this."
+}</con:request>
+        <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="dc690948-56cb-4628-acb4-cc61d113e205" name="Valida retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="XPath Match" id="b6580dc2-64d9-4a72-897e-ae22c2c932f3" name="Valida issue atualizada - NOME">
+          <con:configuration>
+            <path>declare namespace ns1='https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1';
+//ns1:Response[1]/ns1:title[1]</path>
+            <content>Found a bugzinho</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>basedoissoapui</con:username>
+          <con:password>Base23456</con:password>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="owner" value="${#Project#github_user}"/>
+          <con:entry key="number" value="1"/>
+          <con:entry key="repo" value="Repositorio-Issues"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
 </con:testCase>

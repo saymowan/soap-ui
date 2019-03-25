@@ -126,6 +126,21 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   "title": "Found a bug"
 }</con:request>
         <con:originalUri>https://api.github.com/repos/saymowan/docker-mariadb-seleniumgrid-IC-POM/issues</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="582a98f7-21f5-4700-b07c-c59dc54d18eb" name="Valida login confome configuração global">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="482b432c-bf4c-4858-9a05-08e2c182514e" name="JsonPath Match">
+          <con:configuration>
+            <path>$['user']['login']</path>
+            <content>${#Project#github_user}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -143,14 +158,14 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Transferir Codigo Issue Criada" id="56c1e077-29e4-4ab3-b61c-801c452b3cfa">
+  <con:testStep type="transfer" name="Transferir NUMERO Issue Criada" id="56c1e077-29e4-4ab3-b61c-801c452b3cfa">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
         <con:name>novo_repositorio</con:name>
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Issue</con:sourceStep>
-        <con:sourcePath>$['id']</con:sourcePath>
+        <con:sourcePath>$['number']</con:sourcePath>
         <con:targetType>number</con:targetType>
         <con:targetStep>Pesquisar issue criada</con:targetStep>
         <con:targetPath/>
@@ -162,13 +177,28 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   <con:testStep type="restrequest" name="Pesquisar issue criada" id="ded645d1-3538-4d23-8d64-3397591451a2">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Pesquisar issue criada" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json">
+      <con:restRequest name="Pesquisar issue criada" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
         <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/422496945</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="08ee7c6e-7540-4216-ab25-aef01ad54e14" name="Valida retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1d51e85f-3182-4e8d-8010-844873787981" name="Valida retorno numero issue">
+          <con:configuration>
+            <path>$['number']</path>
+            <content>${Pesquisar issue criada#number}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -177,7 +207,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="48659778"/>
+          <con:entry key="number" value="1"/>
           <con:entry key="repo" value="Repositorio-Issues"/>
         </con:parameters>
         <con:parameterOrder>

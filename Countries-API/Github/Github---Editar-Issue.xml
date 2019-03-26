@@ -32,7 +32,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>422</con:status>
+      <con:status>422 401</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1">ns:Fault</con:element>
     </con:representation>
@@ -41,6 +41,10 @@
       <con:status>200</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1">ns:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
     </con:representation>
     <con:request name="Editar Issue" id="bdaef562-0866-4ed4-8cb1-40fff1bb2f06" mediaType="application/json" postQueryString="false">
       <con:settings>

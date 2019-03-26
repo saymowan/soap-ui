@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Github - Editar Comentario Issue" path="/repos/{owner}/{repo}/issues/comments/{comment_id}" id="3ec5b5bc-e5d0-4182-b3f8-61499ab8b92e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3ec5b5bc-e5d0-4182-b3f8-61499ab8b92efileName">Github---Editar-Comentario-Issue</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>owner</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>repo</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>comment_id</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="5c385dcb-98a4-4df2-a204-302c36112d2d" method="PATCH">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Editar Comentario" id="8ec35739-90fa-4b11-bdb0-fc23b9d484bc" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request>{
+  "body": "Comentario Atualizado"
+}</con:request>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="owner" value="${#Project#github_user}"/>
+        <con:entry key="comment_id" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>owner</con:entry>
+        <con:entry>repo</con:entry>
+        <con:entry>comment_id</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

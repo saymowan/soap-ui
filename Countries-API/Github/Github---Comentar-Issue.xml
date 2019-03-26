@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Unlock Issue" path="/repos/{owner}/{repo}/issues/{number}/lock" id="848887a9-0bab-4937-b78f-6d20d91041cb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Comentar Issue" path="/repos/{owner}/{repo}/issues/{number}/comments" id="c9b5016b-92f4-4180-8852-1c1364df66c7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="848887a9-0bab-4937-b78f-6d20d91041cbfileName">Github---Unlock-Issue</con:setting>
+    <con:setting id="c9b5016b-92f4-4180-8852-1c1364df66c7fileName">Github---Comentar-Issue</con:setting>
   </con:settings>
   <con:parameters>
     <con:parameter>
@@ -23,30 +23,26 @@
       <con:default/>
     </con:parameter>
   </con:parameters>
-  <con:method name="Method 1" id="7f86756e-9778-459e-b49f-e21483485e52" method="DELETE">
+  <con:method name="Method 1" id="38a99c02-063d-495a-818e-cbc6247fd616" method="POST">
     <con:settings/>
     <con:parameters/>
-    <con:representation type="REQUEST">
-      <con:mediaType>application/json</con:mediaType>
-      <con:params/>
-    </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>401</con:status>
+      <con:status>404 400</con:status>
       <con:params/>
-      <con:element xmlns:lock="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1/lock">lock:Fault</con:element>
+      <con:element xmlns:com="https://api.github.com/repos/basedoissoapui/issues/1/comments">com:Fault</con:element>
     </con:representation>
     <con:representation type="REQUEST">
       <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
       <con:params/>
     </con:representation>
     <con:representation type="RESPONSE">
-      <con:mediaType xsi:nil="true"/>
-      <con:status>204</con:status>
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>201</con:status>
       <con:params/>
-      <con:element>data</con:element>
+      <con:element xmlns:com="https://api.github.com/repos/basedoissoapui/issues/1/comments">com:Response</con:element>
     </con:representation>
-    <con:request name="Delete Lock" id="263b52f5-a980-48ff-a7d4-abb6a3e18b99" mediaType="application/json" postQueryString="false">
+    <con:request name="Comentar Issue" id="d03b90a0-d731-4931-b9bf-d777af38f046" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -55,7 +51,9 @@
 &lt;/xml-fragment></con:setting>
       </con:settings>
       <con:endpoint>https://api.github.com</con:endpoint>
-      <con:request/>
+      <con:request>{
+  "body": "Quem manda eh a 30!"
+}</con:request>
       <con:credentials>
         <con:authType>No Authorization</con:authType>
       </con:credentials>

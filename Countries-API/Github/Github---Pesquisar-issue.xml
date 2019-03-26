@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Pesquisar issue" path="/repos/{owner}/{repo}/issues/{number}" id="7c62c70e-4bfc-4aad-9978-9e4bfe370599" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:resource name="Github - Pesquisar issue" path="/repos/{owner}/{repo}/issues/{number}" id="7c62c70e-4bfc-4aad-9978-9e4bfe370599" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7c62c70e-4bfc-4aad-9978-9e4bfe370599fileName">Github---Pesquisar-issue</con:setting>
   </con:settings>
@@ -49,6 +49,7 @@
       <con:endpoint>https://api.github.com</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

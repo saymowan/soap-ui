@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Deleter Repositorio" path="/repos/{owner}/{repo}" id="4b5472b8-ae90-4f73-a832-499b58c1f897" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:resource name="Github - Deleter Repositorio" path="/repos/{owner}/{repo}" id="4b5472b8-ae90-4f73-a832-499b58c1f897" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="4b5472b8-ae90-4f73-a832-499b58c1f897fileName">Github---Deleter-Repositorio</con:setting>
   </con:settings>
@@ -47,6 +47,7 @@
       <con:endpoint>https://api.github.com</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

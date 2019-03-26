@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Buscar commits" path="/search/commits" id="759bf604-f304-431a-a698-d8e9ead3ed19" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:resource name="Github - Buscar commits" path="/search/commits" id="759bf604-f304-431a-a698-d8e9ead3ed19" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="759bf604-f304-431a-a698-d8e9ead3ed19fileName">Github---Buscar-commits</con:setting>
   </con:settings>

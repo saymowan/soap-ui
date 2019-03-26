@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Criar Repositorio" path="/user/repos" id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5e" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:resource name="Github - Criar Repositorio" path="/user/repos" id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="3f6be6f5-1dd2-4962-91e0-3aa3dd5a3d5efileName">Github---Criar-Repositorio</con:setting>
   </con:settings>

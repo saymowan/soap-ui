@@ -23,9 +23,39 @@
       <con:default/>
     </con:parameter>
   </con:parameters>
+  <con:resource name="lock" path="repos/:owner/:repo/issues/:number/lock" id="cd66e81a-7b53-4dd2-81bd-b9cda5c1bd47">
+    <con:settings>
+      <con:setting id="cd66e81a-7b53-4dd2-81bd-b9cda5c1bd47fileName">Github---Pesquisar-issue</con:setting>
+    </con:settings>
+    <con:parameters/>
+    <con:method name="Method 1" id="347c0c2f-da14-47db-acf4-c4149538051a" method="DELETE">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="49e9acaa-a12d-493a-8d54-33bb1ff36f35" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
   <con:method name="Lock Issue" id="b73d2575-296a-49cf-a4e5-011442af86df" method="PUT">
     <con:settings/>
     <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true"/>
+      <con:status>204</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
     <con:request name="Lock Issue" id="6564e584-ce7c-4378-ba28-026ab07ab413" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -40,6 +70,7 @@
   "active_lock_reason": "too heated"
 }</con:request>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

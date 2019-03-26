@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Gihub - Lock Issue" path="/repos/{owner}/{repo}/issues/{number}/lock" id="bc712f2d-a5dd-45bb-bb63-43815f4fa237" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bc712f2d-a5dd-45bb-bb63-43815f4fa237fileName">Gihub---Lock-Issue</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>owner</con:name>
+      <con:value>owner</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>owner</con:default>
+    </con:parameter>
+    <con:parameter>
+      <con:name>repo</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+    <con:parameter>
+      <con:name>number</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:default/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Lock Issue" id="b73d2575-296a-49cf-a4e5-011442af86df" method="PUT">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Lock Issue" id="6564e584-ce7c-4378-ba28-026ab07ab413" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>https://api.github.com</con:endpoint>
+      <con:request>{
+  "locked": true,
+  "active_lock_reason": "too heated"
+}</con:request>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <con:entry key="owner" value="${#Project#github_user}"/>
+        <con:entry key="number" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>owner</con:entry>
+        <con:entry>repo</con:entry>
+        <con:entry>number</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

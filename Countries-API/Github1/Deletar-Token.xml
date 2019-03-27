@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c5d0bfc1-4f22-4845-a9ff-284a94846c01" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Deletar Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c5d0bfc1-4f22-4845-a9ff-284a94846c01fileName">Deletar-Token</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Deletar token" id="5ea4b993-3004-4f0c-9968-7343d2d9c2d9">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Deletar token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://api.github.com/authorizations/58cad961bd47590a5e3eca32b96d365ff92e0a5d</con:originalUri>
+        <con:credentials>
+          <con:username>basedoissoapui</con:username>
+          <con:password>Base23456</con:password>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="authorization_id" value="${#Project#token_id}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>authorization_id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

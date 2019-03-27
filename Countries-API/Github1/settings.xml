@@ -5,6 +5,11 @@
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:runType>SEQUENTIAL</con:runType>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>nome_repositorio</con:name>
+      <con:value>Repositorio-Global</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testSuite>

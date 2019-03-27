@@ -4,7 +4,7 @@
     <con:setting id="f8e95a35-9ee6-44e1-bb62-891795d3cbd2fileName">Issue---Adicionar-2-comentarios</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Copy of Gerar Token" id="dd974a7f-8ef8-4021-8b8a-bc9bba545234">
+  <con:testStep type="groovy" name="Gerar Token" id="dd974a7f-8ef8-4021-8b8a-bc9bba545234">
     <con:settings/>
     <con:config>
       <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
@@ -15,10 +15,10 @@ testCase = testSuite.getTestCaseByName("Gerar Token");
 runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Criar Repositorio" id="29837f57-fd6a-401a-be14-359014177147">
+  <con:testStep type="restrequest" name="Criar Repositorio" id="29837f57-fd6a-401a-be14-359014177147">
     <con:settings/>
     <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Criar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Criar Repositorio" id="6501b168-4b3a-4405-88cf-1dc2fa05fbdc" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -30,7 +30,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:encoding>UTF-8</con:encoding>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request>{
-  "name": "Repositorio Issues",
+  "name": "Repositorio Issue Adicionar 2 comentarios",
   "description": "Primeiro repositorio maneiro da Base2",
   "homepage": "https://github.com",
   "private": false,
@@ -74,56 +74,25 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Copy of Transferir Nome Novo Repositorio" id="6624427f-218f-42ea-b5d9-d8abe4eb7156">
+  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="6624427f-218f-42ea-b5d9-d8abe4eb7156">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>novo_repositorio</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Criar Repositorio</con:sourceStep>
-        <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repository</con:targetType>
-        <con:targetStep>Criar Issue</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
         <con:name>novo_repositorio_issue</con:name>
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Repositorio</con:sourceStep>
         <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Pesquisar issue criada</con:targetStep>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>novo_repositorio_delete</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Criar Repositorio</con:sourceStep>
-        <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Deletar Repositorio</con:targetStep>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>comentar_issue</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Criar Repositorio</con:sourceStep>
-        <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Comentar com caracteres especiais</con:targetStep>
+        <con:targetType>nome_repositorio</con:targetType>
+        <con:targetStep>#TestCase#</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Criar Issue" id="bbdecd3a-0a54-455e-ae22-034bcad9c50d">
+  <con:testStep type="restrequest" name="Criar Issue" id="bbdecd3a-0a54-455e-ae22-034bcad9c50d">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{user}/{repository}/issues" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Criar Issue" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Criar Issue" id="9b5bf765-227d-43f9-ace3-7a183537103c" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -161,7 +130,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters>
-          <con:entry key="repository" value="Repositorio-Issues"/>
+          <con:entry key="repository" value="${#TestCase#nome_repositorio}"/>
           <con:entry key="user" value="${#Project#github_user}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -171,36 +140,26 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Copy of Transferir NUMERO Issue Criada" id="65c012ba-7df6-45ff-a771-586b33d4b7ce">
+  <con:testStep type="transfer" name="Transferir NUMERO Issue Criada" id="65c012ba-7df6-45ff-a771-586b33d4b7ce">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>comentar_issue</con:name>
+        <con:name>TestCase Properties</con:name>
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Issue</con:sourceStep>
         <con:sourcePath>$['number']</con:sourcePath>
-        <con:targetType>number</con:targetType>
-        <con:targetStep>Comentar com caracteres especiais</con:targetStep>
+        <con:targetType>numero_issue</con:targetType>
+        <con:targetStep>#TestCase#</con:targetStep>
         <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>pesquisar issue</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>Criar Issue</con:sourceStep>
-        <con:sourcePath>$['number']</con:sourcePath>
-        <con:targetType>number</con:targetType>
-        <con:targetStep>Pesquisar issue criada sem comentario</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Comentar com caracteres especiais" id="2f07fcba-55d7-44ae-9c28-4d3aa08685ec">
+  <con:testStep type="restrequest" name="Comentar Issue" id="2f07fcba-55d7-44ae-9c28-4d3aa08685ec">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}/comments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Comentar com caracteres especiais" id="d03b90a0-d731-4931-b9bf-d777af38f046" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Comentar Issue" id="d03b90a0-d731-4931-b9bf-d777af38f046" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -210,16 +169,13 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         </con:settings>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request>{
-  "body": "Quem manda é a 30!!!! !*!&amp;%&amp;¨¨&amp;*()+_@E)(!*#!)(#)!()*#!OK*-1/-*1+1+"
+  "body": "Quem manda eh a 30!"
 }</con:request>
         <con:originalUri>https://api.github.com/repos/issues/1/comments</con:originalUri>
-        <con:assertion type="JsonPath Match" id="3737d9da-3e1f-497f-b2f3-40b90180beaa" name="Valida mensagem erro ">
+        <con:assertion type="Valid HTTP Status Codes" id="f29d5ee3-ddf6-417a-a16c-ac43bfbb4b67" name="Valida retorno 201">
+          <con:settings/>
           <con:configuration>
-            <path>$['message']</path>
-            <content>Problems parsing JSON</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
+            <codes>201</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -230,8 +186,8 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="1"/>
-          <con:entry key="repo" value="Repositorio-Issues"/>
+          <con:entry key="number" value="${#TestCase#numero_issue}"/>
+          <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>
@@ -241,10 +197,51 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Pesquisar issue criada sem comentario" id="6b606d1a-48ef-4784-94c4-aec7687759e1">
+  <con:testStep type="restrequest" name="Comentar Issue 2" id="5c445b3a-f9d7-4a94-9b0f-e832092d4427">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}/comments" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Comentar Issue 2" id="d03b90a0-d731-4931-b9bf-d777af38f046" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "body": "Quem manda eh a 30!"
+}</con:request>
+        <con:originalUri>https://api.github.com/repos/issues/1/comments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f29d5ee3-ddf6-417a-a16c-ac43bfbb4b67" name="Valida retorno 201">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="owner" value="${#Project#github_user}"/>
+          <con:entry key="number" value="${#TestCase#numero_issue}"/>
+          <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>owner</con:entry>
+          <con:entry>repo</con:entry>
+          <con:entry>number</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Pesquisar issue criada com 2 comentarios" id="6b606d1a-48ef-4784-94c4-aec7687759e1">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Pesquisar issue criada sem comentario" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Pesquisar issue criada com 2 comentarios" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -270,19 +267,10 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Match" id="a04d6412-a26e-4e1a-927d-c1e671a64975" name="Label pendente">
-          <con:configuration>
-            <path>$['labels'][0]['name']</path>
-            <content>pendente</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="JsonPath Match" id="cf6d179e-2bd3-44e9-8a80-385161e212f5" name="Valida zero comentarios">
+        <con:assertion type="JsonPath Match" id="cf6d179e-2bd3-44e9-8a80-385161e212f5" name="Valida 2 comentarios">
           <con:configuration>
             <path>$['comments']</path>
-            <content>0</content>
+            <content>2</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -296,8 +284,8 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="1"/>
-          <con:entry key="repo" value="Repositorio-Issues"/>
+          <con:entry key="number" value="${#TestCase#numero_issue}"/>
+          <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>
@@ -307,10 +295,10 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Deletar Repositorio" id="dcecaedb-a793-49a3-a651-e8f7821bf9e6">
+  <con:testStep type="restrequest" name="Deletar Repositorio" id="dcecaedb-a793-49a3-a651-e8f7821bf9e6">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Deletar Repositorio" id="e0598377-df47-4fa7-b9d4-781e742eb622" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Deletar Repositorio" id="e0598377-df47-4fa7-b9d4-781e742eb622" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -335,7 +323,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="repo" value="Repositorio-Issues"/>
+          <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>
@@ -344,10 +332,10 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of Deletar Token" id="5a86e214-7530-4194-a726-a49484c25bb4">
+  <con:testStep type="restrequest" name="Deletar Token" id="5a86e214-7530-4194-a726-a49484c25bb4">
     <con:settings/>
     <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Copy of Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -379,6 +367,20 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>nome_repositorio</con:name>
+      <con:value>Repositorio-Issue-Adicionar-2-comentarios</con:value>
+    </con:property>
+    <con:property>
+      <con:name>numero_issue</con:name>
+      <con:value>1</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>5c445b3a-f9d7-4a94-9b0f-e832092d4427</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

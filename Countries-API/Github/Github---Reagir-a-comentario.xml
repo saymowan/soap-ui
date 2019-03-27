@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Github - Editar Comentario Issue" path="/repos/{owner}/{repo}/issues/comments/{comment_id}" id="3ec5b5bc-e5d0-4182-b3f8-61499ab8b92e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="Github - Reagir a comentario" path="/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions" id="c249b0f1-d3a8-49ad-ab16-a20b77fa9d16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="3ec5b5bc-e5d0-4182-b3f8-61499ab8b92efileName">Github---Editar-Comentario-Issue</con:setting>
+    <con:setting id="c249b0f1-d3a8-49ad-ab16-a20b77fa9d16fileName">Github---Reagir-a-comentario</con:setting>
   </con:settings>
   <con:parameters>
     <con:parameter>
@@ -23,34 +23,15 @@
       <con:default/>
     </con:parameter>
   </con:parameters>
-  <con:resource name="{comment_id}" path="repos/{owner}/{repo}/issues/comments/{comment_id}" id="121a16c6-61ed-46f8-8e34-74d3d8d9f315">
+  <con:resource name="reactions" path="repos/:owner/:repo/issues/comments/:comment_id/reactions" id="6f248af5-1080-427c-a29b-b54bebb1255f">
     <con:settings>
-      <con:setting id="121a16c6-61ed-46f8-8e34-74d3d8d9f315fileName">Github---Deletar-Comentario-Issue</con:setting>
+      <con:setting id="6f248af5-1080-427c-a29b-b54bebb1255ffileName">Github---Reagir-a-comentario</con:setting>
     </con:settings>
-    <con:parameters>
-      <con:parameter required="true">
-        <con:name>owner</con:name>
-        <con:value>owner</con:value>
-        <con:style>TEMPLATE</con:style>
-        <con:default>owner</con:default>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>repo</con:name>
-        <con:value>repo</con:value>
-        <con:style>TEMPLATE</con:style>
-        <con:default>repo</con:default>
-      </con:parameter>
-      <con:parameter required="true">
-        <con:name>comment_id</con:name>
-        <con:value>comment_id</con:value>
-        <con:style>TEMPLATE</con:style>
-        <con:default>comment_id</con:default>
-      </con:parameter>
-    </con:parameters>
-    <con:method name="Method 1" id="385bbb88-326f-45b9-85d0-8ec7f78db49e" method="DELETE">
+    <con:parameters/>
+    <con:method name="Method 1" id="b526249f-baba-4863-ab9d-a08931577dbd" method="GET">
       <con:settings/>
       <con:parameters/>
-      <con:request name="Request 1" id="18530acf-1417-42c6-a3e0-e748890fe1b9" mediaType="application/json" postQueryString="false">
+      <con:request name="Request 1" id="3909dfda-7082-4662-9e0c-b90b292df20a" mediaType="application/json">
         <con:settings/>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
@@ -62,26 +43,26 @@
       </con:request>
     </con:method>
   </con:resource>
-  <con:method name="Editar Comentario" id="5c385dcb-98a4-4df2-a204-302c36112d2d" method="PATCH">
+  <con:method name="Reagir a comentario" id="3e14fe54-dc86-4bde-96a3-aa165e50491c" method="POST">
     <con:settings/>
     <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>415 404</con:status>
+      <con:params/>
+      <con:element xmlns:reac="https://api.github.com/repos/basedoissoapui/Repositorio-Issue-Reagir-a-comentario/issues/comments/476896548/reactions">reac:Fault</con:element>
+    </con:representation>
     <con:representation type="REQUEST">
       <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:representation type="FAULT">
-      <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>404 422</con:status>
-      <con:params/>
-      <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/comments/1">ns:Fault</con:element>
-    </con:representation>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>200</con:status>
+      <con:status>201 200</con:status>
       <con:params/>
-      <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/comments/1">ns:Response</con:element>
+      <con:element xmlns:reac="https://api.github.com/repos/basedoissoapui/Repositorio-Issue-Reagir-a-comentario/issues/comments/476896548/reactions">reac:Response</con:element>
     </con:representation>
-    <con:request name="Editar Comentario" id="8ec35739-90fa-4b11-bdb0-fc23b9d484bc" mediaType="application/json" postQueryString="false">
+    <con:request name="Reagir a comentario" id="f6f47b96-d472-43fc-a27c-5dbe338fe988" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -91,7 +72,7 @@
       </con:settings>
       <con:endpoint>https://api.github.com</con:endpoint>
       <con:request>{
-  "body": "Comentario Atualizado"
+  "content": "heart"
 }</con:request>
       <con:credentials>
         <con:authType>No Authorization</con:authType>
@@ -100,6 +81,7 @@
       <con:jmsPropertyConfig/>
       <con:parameters>
         <con:entry key="owner" value="${#Project#github_user}"/>
+        <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
         <con:entry key="comment_id" value=""/>
       </con:parameters>
       <con:parameterOrder>
@@ -109,20 +91,26 @@
       </con:parameterOrder>
     </con:request>
   </con:method>
-  <con:method name="Deletar Comentario Issue" id="dbaa6c27-d4a1-4ad5-8f57-37153564f738" method="DELETE">
+  <con:method name="Listar a reacoes" id="e10c4834-9a7d-462b-b06c-dcbb500fdd87" method="GET">
     <con:settings/>
     <con:parameters/>
-    <con:representation type="RESPONSE">
-      <con:mediaType xsi:nil="true"/>
-      <con:status>204</con:status>
-      <con:params/>
-      <con:element>data</con:element>
-    </con:representation>
     <con:representation type="REQUEST">
       <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:request name="Deletar Comentario Issue" id="a59824d3-8cd9-4bd8-aa62-c5f49d9a5bb1" mediaType="application/json" postQueryString="false">
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>415</con:status>
+      <con:params/>
+      <con:element xmlns:reac="https://api.github.com/repos/basedoissoapui/Repositorio-Issue-Varias-Reacoes-em-Comentario/issues/comments/476902485/reactions">reac:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Listar reacoes" id="3af1cea0-66c9-4688-9e8e-b2ba687d6923" mediaType="application/json">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -138,7 +126,8 @@
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:jmsPropertyConfig/>
       <con:parameters>
-        <entry key="owner" value="${#Project#github_user}" xmlns="http://eviware.com/soapui/config"/>
+        <con:entry key="owner" value="${#Project#github_user}"/>
+        <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
       </con:parameters>
     </con:request>
   </con:method>

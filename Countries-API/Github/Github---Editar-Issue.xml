@@ -32,7 +32,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>422 401</con:status>
+      <con:status>422 401 404</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/1">ns:Fault</con:element>
     </con:representation>

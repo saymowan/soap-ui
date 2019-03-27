@@ -93,8 +93,8 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Repositorio</con:sourceStep>
         <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Pesquisar issue criada</con:targetStep>
+        <con:targetType>repository</con:targetType>
+        <con:targetStep>Criar Issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
@@ -114,7 +114,17 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceStep>Criar Repositorio</con:sourceStep>
         <con:sourcePath>$['name']</con:sourcePath>
         <con:targetType>repo</con:targetType>
-        <con:targetStep>Comentar com caracteres especiais</con:targetStep>
+        <con:targetStep>Comentar Issue</con:targetStep>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>editar_comentario</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Criar Repositorio</con:sourceStep>
+        <con:sourcePath>$['name']</con:sourcePath>
+        <con:targetType>repo</con:targetType>
+        <con:targetStep>Editar Comentario Issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
@@ -180,7 +190,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceStep>Criar Issue</con:sourceStep>
         <con:sourcePath>$['number']</con:sourcePath>
         <con:targetType>number</con:targetType>
-        <con:targetStep>Comentar com caracteres especiais</con:targetStep>
+        <con:targetStep>Comentar Issue</con:targetStep>
         <con:targetPath/>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
@@ -191,7 +201,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceStep>Criar Issue</con:sourceStep>
         <con:sourcePath>$['number']</con:sourcePath>
         <con:targetType>number</con:targetType>
-        <con:targetStep>Pesquisar issue criada sem comentario</con:targetStep>
+        <con:targetStep>Pesquisar issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
@@ -213,13 +223,10 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   "body": "Comentario maroto"
 }</con:request>
         <con:originalUri>https://api.github.com/repos/issues/1/comments</con:originalUri>
-        <con:assertion type="JsonPath Match" id="3737d9da-3e1f-497f-b2f3-40b90180beaa" name="Valida mensagem erro ">
+        <con:assertion type="Valid HTTP Status Codes" id="795e065a-b9fb-453d-a711-96ddbe82cd21" name="Retorno 201">
+          <con:settings/>
           <con:configuration>
-            <path>$['message']</path>
-            <content>Problems parsing JSON</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
+            <codes>201</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -241,10 +248,26 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Pesquisar issue criada sem comentario" id="b495d421-4db2-4461-94cd-e0157f0202ce">
+  <con:testStep type="transfer" name="Transferir NUMERO Comentario Criado" id="6982de50-fa93-45eb-a5a4-b90b57348175">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>comentar_issue</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Comentar Issue</con:sourceStep>
+        <con:sourcePath>$['id']</con:sourcePath>
+        <con:targetType>comment_id</con:targetType>
+        <con:targetStep>Editar Comentario Issue</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Pesquisar issue" id="b495d421-4db2-4461-94cd-e0157f0202ce">
     <con:settings/>
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Pesquisar issue criada sem comentario" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Pesquisar issue" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
@@ -279,10 +302,10 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Match" id="cf6d179e-2bd3-44e9-8a80-385161e212f5" name="Valida zero comentarios">
+        <con:assertion type="JsonPath Match" id="cf6d179e-2bd3-44e9-8a80-385161e212f5" name="Valida comentario">
           <con:configuration>
             <path>$['comments']</path>
-            <content>0</content>
+            <content>1</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -303,6 +326,56 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
           <con:entry>owner</con:entry>
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Editar Comentario Issue" id="50b1cfba-b69c-4133-8555-49390f6bbff5">
+    <con:settings/>
+    <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/comments/{comment_id}" methodName="Editar Comentario" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Editar Comentario Issue" id="8ec35739-90fa-4b11-bdb0-fc23b9d484bc" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://api.github.com</con:endpoint>
+        <con:request>{
+  "body": "Comentario Atualizado"
+}</con:request>
+        <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Issues/issues/comments/1</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="10ac9a17-0ef1-4d63-8f97-285c0dafc8d7" name="Valida retorno 200">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="53d9a3f9-4118-4360-899c-f1a1770e3a51" name="Valida novo comentario">
+          <con:configuration>
+            <path>$['body']</path>
+            <content>Comentario Atualizado</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="owner" value="${#Project#github_user}"/>
+          <con:entry key="repo" value="Repositorio-Issues"/>
+          <con:entry key="comment_id" value="476450767"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>owner</con:entry>
+          <con:entry>repo</con:entry>
+          <con:entry>comment_id</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
@@ -381,4 +454,14 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>50b1cfba-b69c-4133-8555-49390f6bbff5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>6982de50-fa93-45eb-a5a4-b90b57348175</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

@@ -16,7 +16,7 @@
     <con:parameters/>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>401 403</con:status>
+      <con:status>401 403 404</con:status>
       <con:params/>
       <con:element xmlns:ns="https://api.github.com/authorizations/270904084">ns:Fault</con:element>
     </con:representation>

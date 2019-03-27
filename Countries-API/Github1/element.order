@@ -18,10 +18,8 @@ Issue---Atualizar-como-Spam.xml
 Issue---Atualizar-como-Off-topic.xml
 Issue---Adicionar-Label-Bug.xml
 Issue---Adicionar-label-Melhoria.xml
-Issue---Pesquisar-por-label-Bug.xml
-Pull-Request---Criar-Novo.xml
+Issue---Deleter-Issue-Inexistente.xml
 Issue---Adicionar-label-Pendente.xml
-Gerar-Token.xml
 Issue---Comentar.xml
 Issue---Comentar-com-caracteres-especiais.xml
 Issue---Editar-Comentario.xml
@@ -30,3 +28,4 @@ Issue---Deletar-Comentario.xml
 Issue---Adicionar-2-comentarios.xml
 Issue---Reagir-a-comentario.xml
 Issue---Varias-Reacoes-em-Comentario.xml
+Gerar-Token.xml

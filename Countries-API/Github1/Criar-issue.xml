@@ -179,7 +179,11 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
     <con:config service="Github" resourcePath="/repos/{owner}/{repo}/issues/{number}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Pesquisar issue criada" id="6296ecd4-23c6-4c9f-916a-34bec3039006" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
+  &lt;con:entry key="Accept" value="application/json"/>
+  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+&lt;/xml-fragment></con:setting>
         </con:settings>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>

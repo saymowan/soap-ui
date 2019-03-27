@@ -93,8 +93,8 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Repositorio</con:sourceStep>
         <con:sourcePath>$['name']</con:sourcePath>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Pesquisar issue criada</con:targetStep>
+        <con:targetType>repository</con:targetType>
+        <con:targetStep>Criar Issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>

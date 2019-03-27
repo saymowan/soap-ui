@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a348bffe-bfee-4502-bd95-3d9313776313" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Pull Request - Criar Novo" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="a348bffe-bfee-4502-bd95-3d9313776313fileName">Pull-Request---Criar-Novo</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:properties/>
-  <con:reportParameters/>
-</con:testCase>

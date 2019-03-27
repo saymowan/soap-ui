@@ -280,6 +280,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:setupScript/>
   <con:properties/>
   <con:reportParameters/>
 </con:testCase>

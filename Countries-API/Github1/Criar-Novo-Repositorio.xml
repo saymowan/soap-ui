@@ -30,7 +30,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:encoding>UTF-8</con:encoding>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request>{
-  "name": "Repositorio Boladao",
+  "name": "Repositorio Boladaooo",
   "description": "Primeiro repositorio maneiro da Base2",
   "homepage": "https://github.com",
   "private": false,

@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="c05c2025-e4db-4e18-8c44-7ed114053763" name="Paises - Pesquisar" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c05c2025-e4db-4e18-8c44-7ed114053763fileName">Paises---Pesquisar</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>PARALLELL</con:runType><con:properties/><con:reportParameters/></con:testSuite>
+<con:testSuite id="c05c2025-e4db-4e18-8c44-7ed114053763" name="Paises - Pesquisar" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c05c2025-e4db-4e18-8c44-7ed114053763fileName">Paises---Pesquisar</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>PARALLELL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:tagId>41b2f9e1-c055-4d88-88b6-051ec662ac0d</con:tagId>
+  <con:tagId>e4ebffaa-0823-4434-a671-0b50bd85a4ad</con:tagId>
+</con:testSuite>

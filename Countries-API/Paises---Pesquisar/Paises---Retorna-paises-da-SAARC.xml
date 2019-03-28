@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="3c72452d-0940-4368-9bef-282bc7c70262" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da SAARC" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="3c72452d-0940-4368-9bef-282bc7c70262fileName">Paises---Retorna-paises-da-SAARC</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="restrequest" name="Paises da regiao SAARC" id="3eeae7d5-02aa-4f76-a11e-84b996144ea6"><con:settings/><con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Paises da regiao SAARC" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/SAARC</con:originalUri><con:assertion type="GroovyScriptAssertion" id="1d10e0fc-43c6-4874-aa6f-18c0f90aa81a" name="Script Assertion"><con:configuration><scriptText>assert context.response, 'Response is null or empty'
+<con:testCase id="3c72452d-0940-4368-9bef-282bc7c70262" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da SAARC" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3c72452d-0940-4368-9bef-282bc7c70262fileName">Paises---Retorna-paises-da-SAARC</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Paises da regiao SAARC" id="3eeae7d5-02aa-4f76-a11e-84b996144ea6">
+    <con:settings/>
+    <con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Paises da regiao SAARC" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://restcountries.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/SAARC</con:originalUri>
+        <con:assertion type="GroovyScriptAssertion" id="1d10e0fc-43c6-4874-aa6f-18c0f90aa81a" name="Script Assertion" disabled="true">
+          <con:configuration>
+            <scriptText>assert context.response, 'Response is null or empty'
 def json = new groovy.json.JsonSlurper().parseText(context.response)
 def result = json.collect{it.'regionalBlocs.acronym'} as Set
 
 //def result2 = json.collect{it.'acronym'} as Set
 
 //assert 1 == result.size()
-assert result == ['SAARC'] as Set
-</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="regionalbloc" value="SAARC" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+assert result == ['SAARC'] as Set</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="2b1c3bca-24fb-44ce-9d00-d907db242039" name="Valida 8 paises da SAARC">
+          <con:configuration>
+            <path>$[*]['regionalBlocs'][*]['acronym']</path>
+            <content>8</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="regionalbloc" value="SAARC" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

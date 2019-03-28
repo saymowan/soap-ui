@@ -2,6 +2,11 @@
 <con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="Default environment" name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="579e061b-9f81-4a2c-83b1-32d4bbab1e51fileName">Countries-API</con:setting>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:requirements/>
@@ -20,7 +25,7 @@
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>15a2177f6a61c50b1190509b5e49a132e8ea3cb8</con:value>
+      <con:value>c7c6933911c81c87728e5ce26c25345a622ac8fd</con:value>
     </con:property>
     <con:property>
       <con:name>repository</con:name>
@@ -32,7 +37,7 @@
     </con:property>
     <con:property>
       <con:name>token_id</con:name>
-      <con:value>274357070</con:value>
+      <con:value>274358321</con:value>
     </con:property>
     <con:property>
       <con:name>bearer</con:name>
@@ -58,6 +63,27 @@
   </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
   <con:authRepository/>
-  <con:tags/>
+  <con:tags>
+    <con:tag>
+      <con:id>41b2f9e1-c055-4d88-88b6-051ec662ac0d</con:id>
+      <con:name>Paises</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>096401b6-b557-4bcb-b3af-b39d5a30c6f0</con:id>
+      <con:name>Github</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>f4c4dcc0-0801-46bf-a0d0-b83f57c0ec61</con:id>
+      <con:name>Sequencial</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>a3931b8f-e5e4-4a0e-8556-fe7ca96b0a6d</con:id>
+      <con:name>token</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>e4ebffaa-0823-4434-a671-0b50bd85a4ad</con:id>
+      <con:name>paralelo</con:name>
+    </con:tag>
+  </con:tags>
   <con:sensitiveInformation/>
 </con:soapui-project>

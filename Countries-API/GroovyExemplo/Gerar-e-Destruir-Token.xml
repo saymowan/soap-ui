@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="8214ea06-bd08-4ce1-95b6-7ca461b32061" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Gerar e Destruir Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8214ea06-bd08-4ce1-95b6-7ca461b32061fileName">Gerar-e-Destruir-Token</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Gerar Token" id="ae8e8eee-cbfb-45b9-9313-ebb441fd944c">
+    <con:settings/>
+    <con:config>
+      <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
+testSuite = project.getTestSuiteByName("Github");
+testCase = testSuite.getTestCaseByName("Gerar Token");
+
+//run test
+runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Destruir Token" id="639f3a3c-42b1-4042-b987-1efb8c429cb5">
+    <con:settings/>
+    <con:config>
+      <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
+testSuite = project.getTestSuiteByName("Github");
+testCase = testSuite.getTestCaseByName("Deletar Token");
+
+//run test
+runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

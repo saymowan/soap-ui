@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="f157a048-503a-4bfe-a384-641de38d4a2d" name="DataDrivenExemplo" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f157a048-503a-4bfe-a384-641de38d4a2dfileName">DataDrivenExemplo</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

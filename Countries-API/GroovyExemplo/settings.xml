@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="ba9ebaf2-c26c-4260-bc1d-510c04e9f9c2" name="GroovyExemplo" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ba9ebaf2-c26c-4260-bc1d-510c04e9f9c2fileName">GroovyExemplo</con:setting>
+    <con:setting id="GeneratableJUnitReport@Style">Single Page (Print)</con:setting>
+    <con:setting id="GeneratableJUnitReport@Folder"/>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="IncludeOverview">true</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

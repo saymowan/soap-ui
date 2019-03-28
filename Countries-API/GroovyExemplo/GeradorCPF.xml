@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="2c3aaf63-ec75-4e4c-ae39-f513a2ebfd93" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="GeradorCPF" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2c3aaf63-ec75-4e4c-ae39-f513a2ebfd93fileName">GeradorCPF</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Gerar CPF" id="2a2ff92d-c165-41b2-8a95-6548792c2872">
+    <con:settings/>
+    <con:config>
+      <script>log.info gerarCPF(true)
+
+ // codigo para gerar CPF
+// codigo copiado de http://gerardocumentos.com.br/?pg=funcao-javascript-para-gerar-cpf e transformado para groovy
+int randomiza(n) {
+ranNum = Math.round(Math.random()*n);
+return ranNum;
+}
+
+int mod(dividendo,divisor) {
+return Math.round(dividendo - (Math.floor(dividendo/divisor)*divisor));
+}
+
+String gerarCPF(boolean comPontos) {
+
+n = 9;
+n1 = randomiza(n);
+n2 = randomiza(n);
+n3 = randomiza(n);
+n4 = randomiza(n);
+n5 = randomiza(n);
+n6 = randomiza(n);
+n7 = randomiza(n);
+n8 = randomiza(n);
+n9 = randomiza(n);
+d1 = n9*2+n8*3+n7*4+n6*5+n5*6+n4*7+n3*8+n2*9+n1*10;
+d1 = 11 - ( mod(d1,11) );
+if (d1>=10) d1 = 0;
+d2 = d1*2+n9*3+n8*4+n7*5+n6*6+n5*7+n4*8+n3*9+n2*10+n1*11;
+d2 = 11 - ( mod(d2,11) );
+if (d2>=10) d2 = 0;
+retorno = '';
+if (comPontos) cpf = ''+n1+n2+n3+'.'+n4+n5+n6+'.'+n7+n8+n9+'-'+d1+d2;
+else cpf = ''+n1+n2+n3+n4+n5+n6+n7+n8+n9+d1+d2;
+
+return cpf;
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

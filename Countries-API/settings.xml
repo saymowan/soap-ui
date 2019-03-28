@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="SoapUI Integration2" name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="SoapUI Integration " name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="579e061b-9f81-4a2c-83b1-32d4bbab1e51fileName">Countries-API</con:setting>
     <con:setting id="IncludeOverview">true</con:setting>
@@ -51,11 +51,11 @@
     <con:oAuth2Profile>
       <con:name>Profile 1</con:name>
       <con:type>OAuth 2.0</con:type>
-      <con:accessToken>TEetetet</con:accessToken>
+      <con:accessToken/>
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
       <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:accessTokenStatus>UNKNOWN</con:accessTokenStatus>
+      <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
       <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
       <con:manualAccessTokenExpirationTime/>
       <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
@@ -83,7 +83,7 @@
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>be7ceaaa2a57ed0e3df4a4900ec926cc3e6ce6ac</con:value>
+      <con:value>2e477eafdaea90af8f669e2fd5a59d6cc2778d21</con:value>
     </con:property>
     <con:property>
       <con:name>repository</con:name>
@@ -95,7 +95,7 @@
     </con:property>
     <con:property>
       <con:name>token_id</con:name>
-      <con:value>274365755</con:value>
+      <con:value>274376988</con:value>
     </con:property>
     <con:property>
       <con:name>bearer</con:name>
@@ -125,7 +125,7 @@
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>49cd356e3e3c98a3c941056348c419ab932c55c8</con:value>
+      <con:value>8b096b89423894ee6913296c484cd898c57f9c0d</con:value>
     </con:property>
     <con:property>
       <con:name>repository</con:name>
@@ -137,7 +137,7 @@
     </con:property>
     <con:property>
       <con:name>token_id</con:name>
-      <con:value>274367005</con:value>
+      <con:value>274369120</con:value>
     </con:property>
     <con:property>
       <con:name>bearer</con:name>

@@ -9,12 +9,13 @@ Abaixo metas deste projeto que serão atualizadas a medida do desenvolvimento:
 
 | Meta | Etapa | Status |
 | ------ | ------ | -------|
-| Implementar 50 CTs em uma API Rest | Etapa 1 | Em andamento |
+| Implementar 50 CTs em uma API Rest | Etapa 1 | Feito |
 | Scripts com Data-Driven |Etapa 1 | Feito
 | Utilizar autenticação OAuth2 | Etapa 1 | Feito
 | Criar teste com validação usando REGEX | Etapa 1 | Feito
 | Criar teste com código Groovy | Etapa 1 | Feito
-| Gerar relatório de testes automaticamente |Etapa 2 | Em andamento
+| Gerar relatório de testes automaticamente |Etapa 2 | Feito
+| Implementar no mínimo 2 environments |Etapa 2 | Feito
 | Preparar massa de teste via restore ou script | Etapa 2 | Em andamento
 | Paralelizar testes | Etapa 2 | Feito
 | Agendar execução via IC (gitlab-ci, Jenkins...) | Etapa 2 | Feito

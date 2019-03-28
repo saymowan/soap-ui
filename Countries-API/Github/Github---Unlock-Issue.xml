@@ -72,6 +72,27 @@
         <con:entry>repo</con:entry>
         <con:entry>number</con:entry>
       </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

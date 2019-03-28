@@ -52,6 +52,17 @@
           <con:entry>user</con:entry>
           <con:entry>repository</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -121,7 +132,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="7"/>
+          <con:entry key="number" value="11"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -129,6 +140,17 @@
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -161,15 +183,6 @@
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Match" id="cf6d179e-2bd3-44e9-8a80-385161e212f5" name="Valida um comentario">
-          <con:configuration>
-            <path>$['comments']</path>
-            <content>1</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -178,7 +191,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="477404292"/>
+          <con:entry key="number" value="11"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -186,6 +199,17 @@
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -244,8 +268,19 @@
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
-          <con:entry key="comment_id" value="477404292"/>
+          <con:entry key="comment_id" value="477412974"/>
         </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -286,7 +321,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="7"/>
+          <con:entry key="number" value="11"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -294,6 +329,17 @@
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -314,4 +360,9 @@
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

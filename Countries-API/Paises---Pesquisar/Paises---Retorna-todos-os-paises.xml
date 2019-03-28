@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6bf8d771-5313-4432-9fb1-77effbe8e3b6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna todos os paises" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="6bf8d771-5313-4432-9fb1-77effbe8e3b6fileName">Paises---Retorna-todos-os-paises</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="restrequest" name="Busca paises" id="0d429c6b-dd91-448d-bb88-22df9520e60c"><con:settings/><con:config service="Paises" resourcePath="/rest/v2/all" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Busca paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri><con:assertion type="GroovyScriptAssertion" id="cbace7e6-d040-4f69-aea4-b6829e36d655" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+<con:testCase id="6bf8d771-5313-4432-9fb1-77effbe8e3b6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna todos os paises" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6bf8d771-5313-4432-9fb1-77effbe8e3b6fileName">Paises---Retorna-todos-os-paises</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Busca paises" id="0d429c6b-dd91-448d-bb88-22df9520e60c">
+    <con:settings/>
+    <con:config service="Paises" resourcePath="/rest/v2/all" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Busca paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://restcountries.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri>
+        <con:assertion type="GroovyScriptAssertion" id="cbace7e6-d040-4f69-aea4-b6829e36d655" name="Script Assertion">
+          <con:configuration>
+            <scriptText>import groovy.json.JsonSlurper
 def ResponseMessage = messageExchange.response.responseContent
 def ParsedMessage = new JsonSlurper().parseText(ResponseMessage)
 assert !(ParsedMessage.isEmpty())
 assert ParsedMessage.name != null
-assert ParsedMessage.size() > 60</scriptText></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+assert ParsedMessage.size() > 60</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

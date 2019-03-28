@@ -7,6 +7,11 @@
   <con:runType>PARALLELL</con:runType>
   <con:properties/>
   <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
   <con:tagId>41b2f9e1-c055-4d88-88b6-051ec662ac0d</con:tagId>
   <con:tagId>e4ebffaa-0823-4434-a671-0b50bd85a4ad</con:tagId>
 </con:testSuite>

@@ -1,2 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Paises - Retorna todos" path="/rest/v2/all" id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaffileName">Paises---Retorna-todos</con:setting></con:settings><con:parameters/><con:method name="All 1" id="1350b5aa-7e84-43f6-bd51-4243214bc717" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Buscar todos os paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource>
+<con:resource name="Paises - Retorna todos" path="/rest/v2/all" id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f1dfb2c9-7be1-4c40-b412-ecfda9eddcaffileName">Paises---Retorna-todos</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="All 1" id="1350b5aa-7e84-43f6-bd51-4243214bc717" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Buscar todos os paises" id="3a14c483-b925-403e-8924-53d6473d836a" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

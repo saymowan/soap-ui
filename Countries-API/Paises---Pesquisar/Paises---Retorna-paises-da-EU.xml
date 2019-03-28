@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ae119698-8998-4703-807e-de48b9824bc5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da EU" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ae119698-8998-4703-807e-de48b9824bc5fileName">Paises---Retorna-paises-da-EU</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="restrequest" name="Bloco regional EU" id="a17aa331-0616-4dcc-a1d8-019d68066fbe"><con:settings/><con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Bloco regional EU" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/EU</con:originalUri><con:assertion type="JsonPath RegEx Match" id="9223ad78-c6e9-4ec2-b084-60fd8c8762c9" name="JsonPath RegEx Match"><con:configuration/></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="regionalbloc" value="EU" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+<con:testCase id="ae119698-8998-4703-807e-de48b9824bc5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Paises - Retorna paises da EU" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ae119698-8998-4703-807e-de48b9824bc5fileName">Paises---Retorna-paises-da-EU</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Bloco regional EU" id="a17aa331-0616-4dcc-a1d8-019d68066fbe">
+    <con:settings/>
+    <con:config service="Paises" resourcePath="/rest/v2/regionalbloc/{regionalbloc}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Bloco regional EU" id="d024e599-bbd4-466c-98cf-c149aa70c696" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://restcountries.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://restcountries.eu/rest/v2/regionalbloc/EU</con:originalUri>
+        <con:assertion type="JsonPath RegEx Match" id="9223ad78-c6e9-4ec2-b084-60fd8c8762c9" name="JsonPath RegEx Match">
+          <con:configuration/>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="regionalbloc" value="EU" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

@@ -52,6 +52,17 @@
           <con:entry>user</con:entry>
           <con:entry>repository</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -119,6 +130,17 @@
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -201,6 +223,17 @@
           <con:entry>repo</con:entry>
           <con:entry>number</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -244,13 +277,24 @@
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
-          <con:entry key="comment_id" value="477404286"/>
+          <con:entry key="comment_id" value="477414567"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>
           <con:entry>repo</con:entry>
           <con:entry>comment_id</con:entry>
         </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -266,4 +310,9 @@
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

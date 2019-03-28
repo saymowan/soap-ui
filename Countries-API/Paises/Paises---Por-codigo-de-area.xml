@@ -1,2 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="Paises - Por codigo de area" path="/rest/v2/alpha/{code}" id="fdfa8786-d80f-44c2-9b6e-3b58528592e9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="fdfa8786-d80f-44c2-9b6e-3b58528592e9fileName">Paises---Por-codigo-de-area</con:setting></con:settings><con:parameters><con:parameter><con:name>code</con:name><con:value>code</con:value><con:style>TEMPLATE</con:style><con:default>code</con:default></con:parameter></con:parameters><con:method name="Method 1" id="802b2dde-fc63-486a-9365-dbf08108f3da" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Response</con:element></con:representation><con:request name="Codigo" id="8ab45561-217e-431a-b0a1-6a88acbd3453" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource>
+<con:resource name="Paises - Por codigo de area" path="/rest/v2/alpha/{code}" id="fdfa8786-d80f-44c2-9b6e-3b58528592e9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fdfa8786-d80f-44c2-9b6e-3b58528592e9fileName">Paises---Por-codigo-de-area</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>code</con:name>
+      <con:value>code</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>code</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="802b2dde-fc63-486a-9365-dbf08108f3da" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:code="https://restcountries.eu/rest/v2/alpha/code">code:Response</con:element>
+    </con:representation>
+    <con:request name="Codigo" id="8ab45561-217e-431a-b0a1-6a88acbd3453" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

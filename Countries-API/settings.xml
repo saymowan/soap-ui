@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="Default environment" name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="579e061b-9f81-4a2c-83b1-32d4bbab1e51" activeEnvironment="SoapUI Integration2" name="Rest APIs" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.6.0" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="579e061b-9f81-4a2c-83b1-32d4bbab1e51fileName">Countries-API</con:setting>
     <con:setting id="IncludeOverview">true</con:setting>
@@ -62,7 +62,96 @@
     </con:oAuth2Profile>
   </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
+  <con:environment id="3b02ae04-8333-4203-ab48-bd09606bf852" name="SoapUI Integration ">
+    <con:service type="REST" name="Paises">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://restcountries.eu</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Github">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://api.github.com</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>client_id</con:name>
+      <con:value>e50a2b829cdc4b684691</con:value>
+    </con:property>
+    <con:property>
+      <con:name>client_secret</con:name>
+      <con:value>010fb15320261dbf3bf2584dd0579531cbcf38e5</con:value>
+    </con:property>
+    <con:property>
+      <con:name>github_user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token</con:name>
+      <con:value>be7ceaaa2a57ed0e3df4a4900ec926cc3e6ce6ac</con:value>
+    </con:property>
+    <con:property>
+      <con:name>repository</con:name>
+      <con:value>mateca</con:value>
+    </con:property>
+    <con:property>
+      <con:name>user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token_id</con:name>
+      <con:value>274365755</con:value>
+    </con:property>
+    <con:property>
+      <con:name>bearer</con:name>
+      <con:value>bearer</con:value>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="8ede968f-a6b8-415d-a111-b66accedcc1c" name="SoapUI Integration2">
+    <con:service type="REST" name="Paises">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://restcountries.eu</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Github">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://api.github.com</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>client_id</con:name>
+      <con:value>815946517992fa8cb1ef</con:value>
+    </con:property>
+    <con:property>
+      <con:name>client_secret</con:name>
+      <con:value>0abcf1ca334ecdbbc296f6b4f40480e98e4c46e4</con:value>
+    </con:property>
+    <con:property>
+      <con:name>github_user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token</con:name>
+      <con:value>49cd356e3e3c98a3c941056348c419ab932c55c8</con:value>
+    </con:property>
+    <con:property>
+      <con:name>repository</con:name>
+      <con:value>mateca</con:value>
+    </con:property>
+    <con:property>
+      <con:name>user</con:name>
+      <con:value>basedoissoapui</con:value>
+    </con:property>
+    <con:property>
+      <con:name>token_id</con:name>
+      <con:value>274367005</con:value>
+    </con:property>
+    <con:property>
+      <con:name>bearer</con:name>
+      <con:value>bearer</con:value>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
   <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
   <con:tags>
     <con:tag>
       <con:id>41b2f9e1-c055-4d88-88b6-051ec662ac0d</con:id>

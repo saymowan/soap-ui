@@ -1,2 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4f6ca726-f778-4c1c-98de-2d893e766c0d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Paises - Retorna capital Chile" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4f6ca726-f778-4c1c-98de-2d893e766c0dfileName">Paises---Retorna-capital-Chile</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="restrequest" name="Capital Chile" id="9598f8af-b892-452a-88f4-0945282ef874"><con:settings/><con:config service="Paises" resourcePath="/rest/v2/capital/{capital}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Capital Chile" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/capital/capital</con:originalUri><con:assertion type="JsonPath Match" id="188f9eea-e002-4d44-bc12-299dab770cd9" name="JsonPath Match"><con:configuration><path>$[?(@.capital=='Santiago')].name[0]</path><content>Chile</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="capital" value="Santiago" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+<con:testCase id="4f6ca726-f778-4c1c-98de-2d893e766c0d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Paises - Retorna capital Chile" searchProperties="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4f6ca726-f778-4c1c-98de-2d893e766c0dfileName">Paises---Retorna-capital-Chile</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="Capital Chile" id="9598f8af-b892-452a-88f4-0945282ef874">
+    <con:settings/>
+    <con:config service="Paises" resourcePath="/rest/v2/capital/{capital}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Capital Chile" id="d12bf026-565a-4def-ab87-38d2d0c619b5" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://restcountries.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://restcountries.eu/rest/v2/capital/capital</con:originalUri>
+        <con:assertion type="JsonPath Match" id="188f9eea-e002-4d44-bc12-299dab770cd9" name="JsonPath Match">
+          <con:configuration>
+            <path>$[?(@.capital=='Santiago')].name[0]</path>
+            <content>Chile</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <entry key="capital" value="Santiago" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

@@ -41,8 +41,29 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:request>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:method>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:resource>
   <con:method name="Reagir a comentario" id="3e14fe54-dc86-4bde-96a3-aa165e50491c" method="POST">
     <con:settings/>
@@ -91,7 +112,23 @@
         <con:entry>repo</con:entry>
         <con:entry>comment_id</con:entry>
       </con:parameterOrder>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
   <con:method name="Listar a reacoes" id="e10c4834-9a7d-462b-b06c-dcbb500fdd87" method="GET">
     <con:settings/>
@@ -132,6 +169,27 @@
         <con:entry key="owner" value="${#Project#github_user}"/>
         <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
       </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3b02ae04-8333-4203-ab48-bd09606bf852">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8ede968f-a6b8-415d-a111-b66accedcc1c">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>

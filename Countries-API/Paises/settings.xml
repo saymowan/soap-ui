@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="e20d5ac8-64c3-4301-b130-9465284590c2" wadlVersion="http://wadl.dev.java.net/2009/02" name="Paises" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="e20d5ac8-64c3-4301-b130-9465284590c2fileName">Paises</con:setting></con:settings><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://restcountries.eu</con:endpoint></con:endpoints></con:interface>
+<con:interface xsi:type="con:RestService" id="e20d5ac8-64c3-4301-b130-9465284590c2" wadlVersion="http://wadl.dev.java.net/2009/02" name="Paises" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e20d5ac8-64c3-4301-b130-9465284590c2fileName">Paises</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://restcountries.eu</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

@@ -7,4 +7,9 @@
   <con:endpoints>
     <con:endpoint>https://api.github.com</con:endpoint>
   </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="81b747af-2baa-468e-b3a3-714e0b82f20b">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>

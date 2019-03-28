@@ -111,7 +111,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="37"/>
+          <con:entry key="number" value="15"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -187,11 +187,11 @@
     </con:property>
     <con:property>
       <con:name>numero_issue</con:name>
-      <con:value>37</con:value>
+      <con:value>15</con:value>
     </con:property>
     <con:property>
       <con:name>numero_comentario</con:name>
-      <con:value>476940222</con:value>
+      <con:value>477404309</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

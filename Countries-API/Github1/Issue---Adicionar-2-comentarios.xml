@@ -102,7 +102,7 @@
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
           <con:entry key="number" value="${#TestCase#numero_issue}"/>
-          <con:entry key="repo" value="${#TestCase#nome_repositorio}"/>
+          <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>
@@ -208,7 +208,7 @@
     </con:property>
     <con:property>
       <con:name>numero_issue</con:name>
-      <con:value>36</con:value>
+      <con:value>14</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

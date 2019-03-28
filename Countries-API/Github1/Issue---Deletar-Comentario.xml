@@ -121,7 +121,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="5"/>
+          <con:entry key="number" value="7"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -178,7 +178,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="476940194"/>
+          <con:entry key="number" value="477404292"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>
@@ -244,7 +244,7 @@
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
-          <con:entry key="comment_id" value="476940194"/>
+          <con:entry key="comment_id" value="477404292"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -286,7 +286,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="5"/>
+          <con:entry key="number" value="7"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>

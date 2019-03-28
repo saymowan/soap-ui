@@ -16,7 +16,7 @@
   "scopes": [
     "public_repo", "delete_repo"
   ],
-  "note": "soapui project2"
+  "note": "soapui project"
 }</con:request>
         <con:originalUri>https://api.github.com/authorizations</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="280ec7b4-a24b-4c86-876c-3d36b17f7620" name="Retorno 201">
@@ -28,7 +28,7 @@
         <con:assertion type="JsonPath Match" id="0611c4e8-594f-47bb-8596-721a4233bcd3" name="JsonPath Match">
           <con:configuration>
             <path>$['app']['name']</path>
-            <content>soapui project2</content>
+            <content>soapui project</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

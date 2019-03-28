@@ -99,7 +99,7 @@
         <con:jmsPropertyConfig/>
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="number" value="29"/>
+          <con:entry key="number" value="7"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
         </con:parameters>
         <con:parameterOrder>

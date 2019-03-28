@@ -18,6 +18,12 @@
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
         <con:originalUri>https://api.github.com/repos/basedoissoapui/Repositorio-Global</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="00b380e3-c9ae-411a-8de2-a7c4f4c72248" name="Vaida retorno 204">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

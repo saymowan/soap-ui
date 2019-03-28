@@ -263,11 +263,11 @@
     </con:property>
     <con:property>
       <con:name>numero_issue</con:name>
-      <con:value>38</con:value>
+      <con:value>16</con:value>
     </con:property>
     <con:property>
       <con:name>numero_comentario</con:name>
-      <con:value>476940224</con:value>
+      <con:value>477404312</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

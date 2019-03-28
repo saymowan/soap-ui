@@ -9,21 +9,24 @@
     <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Deletar token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
-  &lt;con:entry key="Accept" value="application/json"/>
-  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
-&lt;/xml-fragment></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
         <con:originalUri>https://api.github.com/authorizations/58cad961bd47590a5e3eca32b96d365ff92e0a5d</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1fcd443b-a06e-4822-860d-53f4d63488c0" name="Valida retorno 204">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:username>basedoissoapui</con:username>
           <con:password>Base23456</con:password>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-          <con:authType>No Authorization</con:authType>
+          <con:authType>Preemptive</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>

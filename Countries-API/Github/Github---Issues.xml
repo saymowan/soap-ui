@@ -26,7 +26,7 @@
     </con:representation>
     <con:representation type="FAULT">
       <con:mediaType>application/json; charset=utf-8</con:mediaType>
-      <con:status>404 422 400</con:status>
+      <con:status>404 422 400 401</con:status>
       <con:params/>
       <con:element xmlns:iss="https://api.github.com/repos/saymowan/docker-mariadb-seleniumgrid-IC-POM/issues">iss:Fault</con:element>
     </con:representation>

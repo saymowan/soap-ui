@@ -4,17 +4,6 @@
     <con:setting id="46acc50f-e48b-4d2e-b31a-6580380a8abffileName">Criar-Novo-Repositorio</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Gerar Token" id="bed832f7-96e1-48cf-90f0-4b45d99cc079">
-    <con:settings/>
-    <con:config>
-      <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
-testSuite = project.getTestSuiteByName("Github");
-testCase = testSuite.getTestCaseByName("Gerar Token");
-
-//run test
-runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="Criar Repositorio" id="92058c27-8929-4fe4-844f-f78f594fe988">
     <con:settings/>
     <con:config service="Github" methodName="Criar Repositorio" resourcePath="/user/repos" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -30,7 +19,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:encoding>UTF-8</con:encoding>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request>{
-  "name": "Repositorio Boladaooo",
+  "name": "Repositorio Global",
   "description": "Primeiro repositorio maneiro da Base2",
   "homepage": "https://github.com",
   "private": false,
@@ -55,9 +44,12 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
           </con:configuration>
         </con:assertion>
         <con:credentials>
+          <con:username>basedoissoapui</con:username>
+          <con:password>Base23456</con:password>
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-          <con:authType>Global HTTP Settings</con:authType>
+          <con:authType>Preemptive</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
@@ -82,99 +74,22 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Transferir Nome Novo Repositorio" id="3fe70726-63d8-4d30-872e-15303f618138">
+  <con:testStep type="transfer" name="Transferir nomeRepositorioGlobal" id="1dee6d82-3c74-4aae-87af-bd9bd2ed0a09">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>novo_repositorio</con:name>
-        <con:sourceType>name</con:sourceType>
+        <con:name>ProjectProperties</con:name>
+        <con:sourceType>Response</con:sourceType>
         <con:sourceStep>Criar Repositorio</con:sourceStep>
-        <con:sourcePath/>
-        <con:targetType>repo</con:targetType>
-        <con:targetStep>Deletar Repositorio</con:targetStep>
+        <con:sourcePath>$['name']</con:sourcePath>
+        <con:targetType>nome_repositorio</con:targetType>
+        <con:targetStep>#TestSuite#</con:targetStep>
         <con:targetPath/>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Repositorio" id="7d7829c6-8339-4cfe-b741-e3ff1bf1213c">
-    <con:settings/>
-    <con:config service="Github" resourcePath="/repos/{owner}/{repo}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Deletar Repositorio" id="e0598377-df47-4fa7-b9d4-781e742eb622" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="authorization" value="${#Project#bearer} ${#Project#token}"/>
-  &lt;con:entry key="Accept" value="application/json"/>
-  &lt;con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
-&lt;/xml-fragment></con:setting>
-        </con:settings>
-        <con:endpoint>https://api.github.com</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.github.com/repos/270909066/repo_teste</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="4b53c059-84ac-498c-afdf-fd6a399411d3" name="Retorno 204 - Exclusão com sucesso">
-          <con:settings/>
-          <con:configuration>
-            <codes>204</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <con:entry key="owner" value="${#Project#github_user}"/>
-          <con:entry key="repo" value="Repositorio-Boladao"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>owner</con:entry>
-          <con:entry>repo</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Token" id="3e11e42a-685d-4fe7-b345-d13fdb26ea60">
-    <con:settings/>
-    <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>https://api.github.com</con:endpoint>
-        <con:request/>
-        <con:originalUri>https://api.github.com/authorizations/270915384</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="e03cfb29-36cb-4152-a296-a942e49ed72d" name="Retorno 204 - Token excluido com sucesso">
-          <con:settings/>
-          <con:configuration>
-            <codes>204</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:username>basedoissoapui</con:username>
-          <con:password>Base23456</con:password>
-          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
-          <con:preemptive>true</con:preemptive>
-          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-          <con:authType>Preemptive</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters>
-          <entry key="authorization_id" value="${#Project#token_id}" xmlns="http://eviware.com/soapui/config"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>authorization_id</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>3fe70726-63d8-4d30-872e-15303f618138</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
 </con:testCase>

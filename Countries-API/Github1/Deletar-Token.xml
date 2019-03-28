@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="8ed93821-fc14-4bb5-8db3-328a1dc3fea1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Gerar e Deletar Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="c5d0bfc1-4f22-4845-a9ff-284a94846c01" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Deletar Token" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="8ed93821-fc14-4bb5-8db3-328a1dc3fea1fileName">Gerar-e-Deletar-Token</con:setting>
+    <con:setting id="c5d0bfc1-4f22-4845-a9ff-284a94846c01fileName">Deletar-Token</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Gerar Token" id="9055fa9b-5b2d-4ca3-b734-42bf6edd8431">
-    <con:settings/>
-    <con:config>
-      <script>project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("Rest APIs")
-testSuite = project.getTestSuiteByName("Github");
-testCase = testSuite.getTestCaseByName("Gerar Token");
-
-//run test
-runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false);</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Deletar Token" id="14f190df-3d14-433c-ab54-9db0ba84aa9e">
+  <con:testStep type="restrequest" name="Deletar token" id="5ea4b993-3004-4f0c-9968-7343d2d9c2d9">
     <con:settings/>
     <con:config service="Github" resourcePath="/authorizations/{authorization_id}" methodName="DeletarToken" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Deletar Token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Deletar token" id="5d2515e4-f651-445d-9220-e3ebf24d45e2" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>https://api.github.com</con:endpoint>
         <con:request/>
-        <con:originalUri>https://api.github.com/authorizations/270904084</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="f1d37b58-785c-4c34-8311-2cdf79dd1c03" name="Valida exclusão sucesso - retorno 204">
+        <con:originalUri>https://api.github.com/authorizations/58cad961bd47590a5e3eca32b96d365ff92e0a5d</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1fcd443b-a06e-4822-860d-53f4d63488c0" name="Valida retorno 204">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>

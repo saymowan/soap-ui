@@ -44,9 +44,12 @@
           </con:configuration>
         </con:assertion>
         <con:credentials>
+          <con:username>basedoisoapui</con:username>
+          <con:password>Base23456</con:password>
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>true</con:preemptive>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-          <con:authType>Global HTTP Settings</con:authType>
+          <con:authType>Preemptive</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>

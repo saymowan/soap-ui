@@ -12,9 +12,11 @@ Github\Gihub---Lock-Issue.xml
 Github\Github---Buscar-Repositorio.xml
 Github\Github---Buscar-commits.xml
 Github\Github---Buscar-usuarios.xml
+Github\Github---Comentar-Issue.xml
 Github\Github---Criar-Repositorio.xml
 Github\Github---Deletar-Token.xml
 Github\Github---Deleter-Repositorio.xml
+Github\Github---Editar-Comentario-Issue.xml
 Github\Github---Editar-Issue.xml
 Github\Github---Editar-Repositorio.xml
 Github\Github---Gerar-Token.xml
@@ -22,10 +24,8 @@ Github\Github---Issues.xml
 Github\Github---Listar-issues.xml
 Github\Github---Pesquisar-Repositorio.xml
 Github\Github---Pesquisar-issue.xml
-Github\Github---Unlock-Issue.xml
-Github\Github---Comentar-Issue.xml
-Github\Github---Editar-Comentario-Issue.xml
 Github\Github---Reagir-a-comentario.xml
+Github\Github---Unlock-Issue.xml
 Paises---Pesquisar\Paises---Retorna-paises-por-nome-dinamico-DataDriven.xml
 Paises---Pesquisar\Paises---Retorna-todos-os-paises.xml
 Paises---Pesquisar\Paises---Retorna-pais-com-moeda-real.xml
@@ -73,3 +73,4 @@ Github1\Issue---Adicionar-2-comentarios.xml
 Github1\Issue---Reagir-a-comentario.xml
 Github1\Issue---Varias-Reacoes-em-Comentario.xml
 Github1\Deletar-Token.xml
+Github1\Deletar-Repositorio.xml

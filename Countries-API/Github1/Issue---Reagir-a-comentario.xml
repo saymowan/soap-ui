@@ -75,7 +75,7 @@
         <con:sourceStep>Criar Issue</con:sourceStep>
         <con:sourcePath>$['number']</con:sourcePath>
         <con:targetType>number</con:targetType>
-        <con:targetStep xsi:nil="true"/>
+        <con:targetStep>Comentar issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>

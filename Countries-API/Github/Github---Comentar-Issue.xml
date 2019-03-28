@@ -55,6 +55,7 @@
   "body": "Quem manda eh a 30!"
 }</con:request>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

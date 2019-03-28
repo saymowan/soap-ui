@@ -161,7 +161,7 @@ runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), 
         <con:sourceStep>Criar Issue</con:sourceStep>
         <con:sourcePath>$['number']</con:sourcePath>
         <con:targetType xsi:nil="true"/>
-        <con:targetStep xsi:nil="true"/>
+        <con:targetStep>Comentar issue</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:upgraded>true</con:upgraded>
       </con:transfers>

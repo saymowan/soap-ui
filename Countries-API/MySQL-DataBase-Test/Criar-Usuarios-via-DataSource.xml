@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c2e61757-0765-442e-96f0-f6c341f66500" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Criar Usuarios via DataSource" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description/>
+  <con:settings>
+    <con:setting id="c2e61757-0765-442e-96f0-f6c341f66500fileName">Criar-Usuarios-via-DataSource</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="11c2f02c-2279-4930-91e4-f23db7e1efc4">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="JDBC">
+        <con:configuration>
+          <driver>com.mysql.jdbc.Driver</driver>
+          <connstr>jdbc:mysql://remotemysql.com:3306/MaH30tNQ79?user=MaH30tNQ79&amp;password=PASS_VALUE</connstr>
+          <pass>3O3XgQSQsX</pass>
+          <Connection>&lt;None></Connection>
+          <query>Select usuario.job as usuario_job, usuario.name as usuario_name 
+From usuario</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>usuario_name</con:property>
+      <con:property>usuario_job</con:property>
+      <con:startRow>1</con:startRow>
+      <con:endRow>7</con:endRow>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>false</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Criar usuario" id="c93dbfaa-d5fc-425c-a37c-04bc6c257b45">
+    <con:settings/>
+    <con:config service="Reqres in" resourcePath="/api/users" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Criar usuario" id="913d253d-16c7-4afb-8bc5-d369679b9fc8" mediaType="application/x-www-form-urlencoded" postQueryString="true">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://reqres.in</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://reqres.in/api/users</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="70ca860a-d7d1-4834-894b-8f7893ae5aed" name="Valida retorno 201">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="name" value="${DataSource#usuario_name}"/>
+          <con:entry key="job" value="${DataSource#usuario_job}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>name</con:entry>
+          <con:entry>job</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="461cd66a-93b3-451e-9f9d-3d528c27533f">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Criar usuario</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>461cd66a-93b3-451e-9f9d-3d528c27533f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

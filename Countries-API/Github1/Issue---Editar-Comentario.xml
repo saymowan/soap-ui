@@ -277,7 +277,7 @@
         <con:parameters>
           <con:entry key="owner" value="${#Project#github_user}"/>
           <con:entry key="repo" value="${#TestSuite#nome_repositorio}"/>
-          <con:entry key="comment_id" value="477416620"/>
+          <con:entry key="comment_id" value="477425180"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>owner</con:entry>

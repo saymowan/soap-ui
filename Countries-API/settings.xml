@@ -55,7 +55,6 @@
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
       <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
       <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
       <con:manualAccessTokenExpirationTime/>
       <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
@@ -68,6 +67,9 @@
     </con:service>
     <con:service type="REST" name="Github">
       <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://api.github.com</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Reqres in">
+      <con:endpoint authProfile="No Authorization">https://reqres.in</con:endpoint>
     </con:service>
     <con:property>
       <con:name>client_id</con:name>
@@ -83,7 +85,7 @@
     </con:property>
     <con:property>
       <con:name>token</con:name>
-      <con:value>2e477eafdaea90af8f669e2fd5a59d6cc2778d21</con:value>
+      <con:value>d2ae247a12c4192565416fc11815faba40e9a01b</con:value>
     </con:property>
     <con:property>
       <con:name>repository</con:name>
@@ -95,7 +97,7 @@
     </con:property>
     <con:property>
       <con:name>token_id</con:name>
-      <con:value>274376988</con:value>
+      <con:value>274377695</con:value>
     </con:property>
     <con:property>
       <con:name>bearer</con:name>
@@ -110,6 +112,9 @@
     </con:service>
     <con:service type="REST" name="Github">
       <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">https://api.github.com</con:endpoint>
+    </con:service>
+    <con:service type="REST" name="Reqres in">
+      <con:endpoint authProfile="No Authorization"/>
     </con:service>
     <con:property>
       <con:name>client_id</con:name>

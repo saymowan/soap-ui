@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="3366c51e-21cc-4190-9d0c-51d11661fa6a" name="MySQL DataBase Test" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Resource: https://reqres.in
+
+Necessário configurar driver "mysql-connector-java-5.1.47.jar" que está no repositório colocando-o dentro do path ".\bin\ext"
+-- dicas: https://support.smartbear.com/readyapi/docs/testing/data-driven/tutorials/jtds/jdbc.html
+
+Link do banco de dados: https://remotemysql.com
+
+Username: MaH30tNQ79
+Password: 3O3XgQSQsX
+Database Name: MaH30tNQ79
+Server: remotemysql.com
+Port: 3306
+
+Script para massa de dados:
+-- --------------------------------------------------------
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `job` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `usuario` (`id`, `name`, `job`) VALUES
+(1, 'Sayoan', 'Analista de Testes'),
+(2, 'Marcelo', 'Analista de Testes'),
+(3, 'Claudinei', 'Analista de Testes'),
+(4, 'Hugo', 'Gerente da Porra toda'),
+(5, 'Cesar', 'Gerente de Projetos'),
+(6, 'Robert', 'Dono da porra toda tambem'),
+(7, 'Ramon', 'Analista de Testes');
+COMMIT; 
+--------------------------------------------------------------------</con:description>
+  <con:settings>
+    <con:setting id="3366c51e-21cc-4190-9d0c-51d11661fa6afileName">MySQL-DataBase-Test</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

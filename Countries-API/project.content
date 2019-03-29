@@ -26,6 +26,7 @@ Github\Github---Pesquisar-Repositorio.xml
 Github\Github---Pesquisar-issue.xml
 Github\Github---Reagir-a-comentario.xml
 Github\Github---Unlock-Issue.xml
+Reqres-in\Usuarios.xml
 Paises---Pesquisar\Paises---Retorna-paises-por-nome-dinamico-DataDriven.xml
 Paises---Pesquisar\Paises---Retorna-todos-os-paises.xml
 Paises---Pesquisar\Paises---Retorna-pais-com-moeda-real.xml
@@ -78,3 +79,4 @@ GroovyExemplo\Gerar-e-Destruir-Token.xml
 GroovyExemplo\GeradorCPF.xml
 ReGexExemplo\Paises---Retorna-pais-codigo-telefone-55.xml
 DataDrivenExemplo\Paises---Retorna-paises-por-nome-dinamico-DataDriven.xml
+MySQL-DataBase-Test\Criar-Usuarios-via-DataSource.xml

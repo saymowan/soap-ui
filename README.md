@@ -16,11 +16,11 @@ Abaixo metas deste projeto que serão atualizadas a medida do desenvolvimento:
 | Criar teste com código Groovy | Etapa 1 | Feito
 | Gerar relatório de testes automaticamente |Etapa 2 | Feito
 | Implementar no mínimo 2 environments |Etapa 2 | Feito
-| Preparar massa de teste via restore ou script | Etapa 2 | Em andamento
+| Preparar massa de teste via restore ou script | Etapa 2 | Feito
 | Paralelizar testes | Etapa 2 | Feito
 | Agendar execução via IC (gitlab-ci, Jenkins...) | Etapa 2 | Feito
 
-
+### DEPOIS VOU FAZER UM PASSO A PASSO LINDÃO
 
 ### Dicas para iniciar
 
